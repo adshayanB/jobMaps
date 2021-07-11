@@ -4,7 +4,7 @@ import helmet from 'helmet';
 const app = express();
 const PORT = 3000;
 
-//helmet set up (secruity)
+//helmet set up (security)
 app.use(helmet());
 
 // mongoose connection
