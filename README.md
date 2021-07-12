@@ -1,7 +1,7 @@
 # :briefcase::pencil: projectAlpha 
 
 
-#### :round_pushpin: Check it out at (deployed link here)
+### :round_pushpin: Check it out at (deployed link here)
 ---
 #### :goal_net: Goal
 
