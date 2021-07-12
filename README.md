@@ -13,8 +13,8 @@
 | Area        | Name           |
 | :------------- |:-------------| 
 | **Product** | [Sayma Khan](https://saymaakhan.github.io/) | 
-| **Data Science**        | [Adshayan Balendra](https://adshayanb.github.io/) & [Jaishree Balamurugan](https://jaishreebala.com/) |
-| **Back-end Development** | [Adshayan Balendra](https://adshayanb.github.io/) |  
+| **Data Science**        | [Adshayan Balendra](https://www.linkedin.com/in/adshayan-balendra/) & [Jaishree Balamurugan](https://jaishreebala.com/) |
+| **Back-end Development** | [Adshayan Balendra](https://www.linkedin.com/in/adshayan-balendra/) |  
 | **Front-end Development** | [Jaishree Balamurugan](https://jaishreebala.com/) & [Sayma Khan](https://saymaakhan.github.io/) | 
 | **UX** | [Jaishree Balamurugan](https://jaishreebala.com/) & [Sayma Khan](https://saymaakhan.github.io/) |
 
