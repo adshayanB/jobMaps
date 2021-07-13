@@ -1,5 +1,5 @@
 <!-- # :briefcase::pencil: Job Tracker  -->
-<img src="client/src/img/jobTrackerBanner.png" alt="banner" width=fit-content/>
+<img src="client/src/images/jobTrackerBanner.png" alt="banner" width=fit-content/>
 
 ### :round_pushpin: Check it out at (deployed link here)
 ---
