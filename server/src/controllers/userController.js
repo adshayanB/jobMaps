@@ -69,7 +69,8 @@ export const login = (req, res) => {
                 firstName: user.firstName,
                 _id: user.id,
               },
-              "RESTFULAPIs"
+              "RESTFULAPIs",
+              { expiresIn: "24h" }
             ),
           });
         }
