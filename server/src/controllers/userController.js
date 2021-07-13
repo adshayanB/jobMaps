@@ -13,7 +13,7 @@ export const loginRequired = (req, res, next) => {
   }
 };
 
-//Register User with 
+//Register User with
 export const register = (req, res) => {
   User.findOne(
     {
@@ -22,11 +22,9 @@ export const register = (req, res) => {
     (err, user) => {
       if (err) throw err;
       if (user) {
-        res
-          .status(401)
-          .json({
-            message: "Authentication failed: User with this email exists",
-          });
+        res.status(401).json({
+          message: "Authentication failed: User with this email exists",
+        });
       } else if (!user) {
         const newUser = new User(req.body);
         newUser.hashPassword = bcrypt.hashSync(req.body.password, 10);
@@ -64,7 +62,12 @@ export const login = (req, res) => {
         } else {
           return res.json({
             token: jwt.sign(
-              { email: user.email, username: user.username, _id: user.id },
+              {
+                email: user.email,
+                lastName: user.lastName,
+                firstName: user.firstName,
+                _id: user.id,
+              },
               "RESTFULAPIs"
             ),
           });
@@ -72,4 +75,8 @@ export const login = (req, res) => {
       }
     }
   );
+};
+
+export const userInfo = (req, res) => {
+  res.json(req.user);
 };
