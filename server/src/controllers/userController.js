@@ -80,3 +80,19 @@ export const login = (req, res) => {
 export const userInfo = (req, res) => {
   res.json(req.user);
 };
+
+export const updateUser = (req, res) => {
+  const { userId } = req.user;
+
+  User.findOneAndUpdate(
+    { _id: userId },
+    req.body,
+    { new: true },
+    (err, user) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json(user);
+    }
+  );
+};
