@@ -64,12 +64,9 @@ export const login = (req, res) => {
           return res.json({
             token: jwt.sign(
               {
-                email: user.email,
-                lastName: user.lastName,
-                firstName: user.firstName,
                 _id: user.id,
               },
-              "RESTFULAPIs",
+              "mY sEcReT kEy heheHEHEH",
               { expiresIn: "24h" }
             ),
           });
@@ -80,7 +77,12 @@ export const login = (req, res) => {
 };
 
 export const userInfo = (req, res) => {
-  res.json(req.user);
+  Contact.findById(req.user._id, (err, contact) => {
+    if (err) {
+        res.send(err);
+    }
+    res.json(contact);
+});
 };
 
 export const updateUser = (req, res) => {
