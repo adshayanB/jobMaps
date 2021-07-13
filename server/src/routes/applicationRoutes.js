@@ -1,4 +1,5 @@
 import {
+  deleteUser,
   login,
   loginRequired,
   register,
@@ -16,7 +17,8 @@ const routes = (app) => {
   app
     .route("/userInfo")
     .get(loginRequired, userInfo)
-    .put(loginRequired, updateUser);
+    .put(loginRequired, updateUser)
+    .delete(loginRequired, deleteUser);
 };
 
 export default routes;
