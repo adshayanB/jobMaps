@@ -28,7 +28,7 @@ app.use((req, res, next) => {
   ) {
     jsonwebtoken.verify(
       req.headers.authorization.split(" ")[1],
-      "RESTFULAPIs",
+      "mY sEcReT kEy heheHEHEH",
       (err, decode) => {
         if (err) req.user = undefined;
         req.user = decode;
