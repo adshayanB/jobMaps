@@ -2,6 +2,7 @@ import {
   login,
   loginRequired,
   register,
+  updateUser,
   userInfo,
 } from "../controllers/userController.js";
 
@@ -12,7 +13,10 @@ const routes = (app) => {
   //login
   app.route("/auth/login").post(login);
 
-  app.route("/userInfo").get(loginRequired, userInfo);
+  app
+    .route("/userInfo")
+    .get(loginRequired, userInfo)
+    .put(loginRequired, updateUser);
 };
 
 export default routes;

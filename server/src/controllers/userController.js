@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { UserSchema } from "../models/userModel.js";
+import { Console } from "console";
 
 const User = mongoose.model("User", UserSchema);
 //Token verifcation
@@ -82,11 +83,14 @@ export const userInfo = (req, res) => {
 };
 
 export const updateUser = (req, res) => {
-  const { userId } = req.user;
-
   User.findOneAndUpdate(
-    { _id: userId },
-    req.body,
+    { _id: req.user._id },
+    {
+      hashPassword: bcrypt.hashSync(req.body.password, 10),
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+    },
     { new: true },
     (err, user) => {
       if (err) {
