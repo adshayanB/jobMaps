@@ -96,6 +96,7 @@ export const updateUser = (req, res) => {
       if (err) {
         res.send(err);
       }
+      user.hashPassword = undefined;
       res.json(user);
     }
   );
