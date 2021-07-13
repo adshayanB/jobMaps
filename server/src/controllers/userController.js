@@ -77,12 +77,13 @@ export const login = (req, res) => {
 };
 
 export const userInfo = (req, res) => {
-  Contact.findById(req.user._id, (err, contact) => {
+  User.findById(req.user._id, (err, user) => {
     if (err) {
-        res.send(err);
+      res.send(err);
     }
-    res.json(contact);
-});
+    user.hashPassword = undefined;
+    res.json(user);
+  });
 };
 
 export const updateUser = (req, res) => {
