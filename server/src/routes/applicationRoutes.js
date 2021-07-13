@@ -12,7 +12,7 @@ const routes = (app) => {
   //login
   app.route("/auth/login").post(login);
 
-  app.route("/getUserInfo").get(loginRequired, userInfo);
+  app.route("/userInfo").get(loginRequired, userInfo);
 };
 
 export default routes;
