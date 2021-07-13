@@ -1,4 +1,9 @@
-import { login, register } from "../controllers/userController.js";
+import {
+  login,
+  loginRequired,
+  register,
+  userInfo,
+} from "../controllers/userController.js";
 
 const routes = (app) => {
   //register route
@@ -6,6 +11,8 @@ const routes = (app) => {
 
   //login
   app.route("/auth/login").post(login);
-}
+
+  app.route("/userInfo").get(loginRequired, userInfo);
+};
 
 export default routes;
