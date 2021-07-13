@@ -4,7 +4,7 @@ import helmet from "helmet";
 import routes from "./src/routes/applicationRoutes.js";
 import jsonwebtoken from "jsonwebtoken";
 const app = express();
-const PORT = 3000;
+const PORT = 9000;
 
 //helmet set up (security)
 app.use(helmet());
