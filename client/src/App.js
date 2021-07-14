@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import Register from "./pages/Register";
+import "./styles/app.scss";
 
 const App = () => {
-    return (
-        <div>
-            <h1>Job tracking app!!</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <Register />
+    </div>
+  );
+};
 
 export default App;
