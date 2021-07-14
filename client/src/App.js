@@ -1,9 +1,11 @@
 import React from 'react';
+import Register from './pages/Register'
+import './styles/app.scss'
 
 const App = () => {
     return (
         <div>
-            <h1>Job tracking app!!</h1>
+            <Register />
         </div>
     )
 }

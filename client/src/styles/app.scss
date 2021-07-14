@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: , sans-serif; (to be updated later)
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+// Media Queries (to be added later)
+
+// Import Partials
+@import "./register"
