@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Nav() {
-    return (
-        <div>
-            NAV!
-        </div>
-    )
+  return <div>NAV!</div>;
 }
 
-export default Nav
+export default Nav;
