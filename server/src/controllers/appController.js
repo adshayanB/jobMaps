@@ -6,8 +6,6 @@ const User = mongoose.model("User", UserSchema);
 const App = mongoose.model("App", appSchema);
 
 export const createApp = (req, res) => {
-
-    
   const newApp = new App(req.body);
   newApp.save((err, app) => {
     if (err) {
@@ -15,21 +13,20 @@ export const createApp = (req, res) => {
         message: err,
       });
     } else {
-        User.findOneAndUpdate(
-            { _id: req.user._id },
-            {
-              $push: {appId:newApp._id}
-            },
-            { new: true },
-            (err, user) => {
-              if (err) {
-                res.send(err);
-                return;
-              }
-            }
-          );
+      User.findOneAndUpdate(
+        { _id: req.user._id },
+        {
+          $push: { appId: newApp._id },
+        },
+        { new: true },
+        (err, user) => {
+          if (err) {
+            res.send(err);
+            return;
+          }
+        }
+      );
       return res.json(newApp);
     }
   });
 };
-

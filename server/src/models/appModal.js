@@ -29,7 +29,6 @@ export const appSchema = new Schema({
   },
   date_applied: {
     type: Date,
-    required:false,
+    required: false,
   },
 });
-
