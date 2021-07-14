@@ -19,7 +19,8 @@
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^4.13.21",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "saas": "^1.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

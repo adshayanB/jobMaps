@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { UserSchema } from "../models/userModel.js";
-import { Console } from "console";
 
 const User = mongoose.model("User", UserSchema);
 //Token verifcation
@@ -82,7 +81,7 @@ export const userInfo = (req, res) => {
       res.send(err);
     }
     user.hashPassword = undefined;
-    res.json(user);
+    return res.json(user);
   });
 };
 
@@ -101,7 +100,7 @@ export const updateUser = (req, res) => {
         res.send(err);
       }
       user.hashPassword = undefined;
-      res.json(user);
+      return res.json(user);
     }
   );
 };
@@ -112,6 +111,6 @@ export const deleteUser = (req, res) => {
     if (err) {
       res.send(err);
     }
-    res.json({ message: "Deleted User" });
+   return res.json({ message: "Deleted User" });
   });
 };
