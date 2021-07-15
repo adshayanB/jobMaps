@@ -106,7 +106,6 @@ export const updateUser = (req, res) => {
 };
 
 export const deleteUser = (req, res) => {
-  //TODO this will be refactored to also include removing a users application items
   User.remove({ _id: req.user._id }, (err) => {
     if (err) {
       res.send(err);

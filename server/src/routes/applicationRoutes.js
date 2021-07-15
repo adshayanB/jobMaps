@@ -12,6 +12,7 @@ import {
   getApp,
   getAllApps,
   updateApp,
+  deleteApp,
 } from "../controllers/appController.js";
 
 const routes = (app) => {
@@ -30,7 +31,8 @@ const routes = (app) => {
     .route("/applications")
     .post(loginRequired, createApp)
     .get(loginRequired, getApp)
-    .put(loginRequired, updateApp);
+    .put(loginRequired, updateApp)
+    .delete(loginRequired, deleteApp);
 
   app.route("/applications/getAll").get(loginRequired, getAllApps);
 };
