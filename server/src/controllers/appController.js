@@ -7,6 +7,7 @@ const App = mongoose.model("App", appSchema);
 
 export const createApp = (req, res) => {
   const newApp = new App(req.body);
+  newApp.userID=req.user._id;
   newApp.save((err, app) => {
     if (err) {
       return res.status(400).send({
