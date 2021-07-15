@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
-import bgImg from "../images/tempBg.jpg";
+import bgImg from "../images/employee.gif";
 
 function Register() {
   return (
@@ -11,7 +11,7 @@ function Register() {
           <div className="register-area">
             <form className="login-form">
               <div class="logo-placeholder">Logo</div>
-              <h1>Sign Up For Your Job Tracker Account</h1>
+              <h1>Sign Up For An Account</h1>
               <div className="searchInput">
                 <input type="text" name="fname" required />
                 <label className="label-name">
@@ -38,7 +38,7 @@ function Register() {
               </div>
 
               <div className="links">
-                Already Have An Accout?{" "}
+                Already Have An Account?{" "}
                 <b>
                   <Link to="/login">Log In</Link>
                 </b>

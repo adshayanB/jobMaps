@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
-import bgImg from "../images/tempBg.jpg";
+import bgImg from "../images/employee.gif";
 
 function Login() {
   return (
@@ -11,7 +11,7 @@ function Login() {
           <div className="register-area">
             <form className="login-form">
               <div class="logo-placeholder">Logo</div>
-              <h1>Log In To Your Job Tracker Account</h1>
+              <h1>Log In To Your Account</h1>
               <div className="searchInput">
                 <input type="text" name="email" required />
                 <label className="label-name">
@@ -26,7 +26,7 @@ function Login() {
               </div>
 
               <div className="links">
-                Don't Have An Accout?{" "}
+                Don't Have An Account?{" "}
                 <b>
                   <Link to="/register">Sign Up</Link>
                 </b>
