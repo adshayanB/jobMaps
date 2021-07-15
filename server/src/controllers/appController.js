@@ -30,3 +30,13 @@ export const createApp = (req, res) => {
     }
   });
 };
+
+export const getApp = (req,res) =>{
+    App.findById(req.body.ID, (err, app) => {
+        if (err) {
+          res.send(err);
+        }
+        return res.json(app);
+      });
+
+}
