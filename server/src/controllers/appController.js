@@ -14,19 +14,6 @@ export const createApp = (req, res) => {
         message: err,
       });
     } else {
-      User.findOneAndUpdate(
-        { _id: req.user._id },
-        {
-          $push: { appId: newApp._id },
-        },
-        { new: true },
-        (err, user) => {
-          if (err) {
-            res.send(err);
-            return;
-          }
-        }
-      );
       return res.json(newApp);
     }
   });
