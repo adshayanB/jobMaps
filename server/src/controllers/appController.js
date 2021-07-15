@@ -37,3 +37,26 @@ export const getAllApps = async (req, res) => {
 
   return res.json(appValues);
 };
+
+export const updateApp = (req, res) => {
+  App.findOneAndUpdate(
+    { _id: req.body.appID },
+    {
+      company: req.body.company,
+      jobTitle: req.body.jobTitle,
+      status: req.body.status,
+      date_offer: req.body.date_offer,
+      date_interview: req.body.date_interview,
+      date_accept: req.body.date_accept,
+      date_applied: req.body.date_applied,
+    },
+    { new: true },
+    (err, app) => {
+      if (err) {
+        res.send(err);
+      }
+
+      return res.json(app);
+    }
+  );
+};
