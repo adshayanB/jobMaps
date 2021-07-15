@@ -26,7 +26,7 @@ const routes = (app) => {
     .post(loginRequired, createApp)
     .get(loginRequired, getApp);
 
-  app.route("/applications/getAll").get(loginRequired,getAllApps);
+  app.route("/applications/getAll").get(loginRequired, getAllApps);
 };
 
 export default routes;

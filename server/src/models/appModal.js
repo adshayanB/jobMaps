@@ -31,8 +31,8 @@ export const appSchema = new Schema({
     type: Date,
     required: false,
   },
-  userId:{
-      type:String, 
-      required:true,
-  }
+  userId: {
+    type: String,
+    required: true,
+  },
 });
