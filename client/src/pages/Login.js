@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import bgImg from "../images/tempBg.jpg";
 
-function Register() {
+function Login() {
   return (
     <>
       <div className="register">
@@ -11,19 +11,7 @@ function Register() {
           <div className="register-area">
             <form className="login-form">
               <div class="logo-placeholder">Logo</div>
-              <h1>Sign Up For Your Job Tracker Account</h1>
-              <div className="searchInput">
-                <input type="text" name="fname" required />
-                <label className="label-name">
-                  <span className="content-name">First Name</span>
-                </label>
-              </div>
-              <div className="searchInput">
-                <input type="text" name="lname" required />
-                <label className="label-name">
-                  <span className="content-name">Last Name</span>
-                </label>
-              </div>
+              <h1>Log In To Your Job Tracker Account</h1>
               <div className="searchInput">
                 <input type="text" name="email" required />
                 <label className="label-name">
@@ -38,9 +26,9 @@ function Register() {
               </div>
 
               <div className="links">
-                Already Have An Accout?{" "}
+                Don't Have An Accout?{" "}
                 <b>
-                  <Link to="/login">Log In</Link>
+                  <Link to="/register">Sign Up</Link>
                 </b>
               </div>
             </form>
@@ -50,5 +38,4 @@ function Register() {
     </>
   );
 }
-
-export default Register;
+export default Login;
