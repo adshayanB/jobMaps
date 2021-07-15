@@ -42,7 +42,11 @@ export const getApp = (req, res) => {
 };
 
 export const getAllApps = async (req, res) => {
-  const appValues = await App.find({ userId: req.user._id });
+  const appValues = await App.find({ userId: req.user._id },(err,app) =>{
+      if(err){
+          res.send(err);
+      }
+  } );
 
   return res.json(appValues);
 };
