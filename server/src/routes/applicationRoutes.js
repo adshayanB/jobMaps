@@ -7,7 +7,12 @@ import {
   userInfo,
 } from "../controllers/userController.js";
 
-import { createApp, getApp, getAllApps } from "../controllers/appController.js";
+import {
+  createApp,
+  getApp,
+  getAllApps,
+  updateApp,
+} from "../controllers/appController.js";
 
 const routes = (app) => {
   //register route
@@ -24,7 +29,8 @@ const routes = (app) => {
   app
     .route("/applications")
     .post(loginRequired, createApp)
-    .get(loginRequired, getApp);
+    .get(loginRequired, getApp)
+    .put(loginRequired, updateApp);
 
   app.route("/applications/getAll").get(loginRequired, getAllApps);
 };

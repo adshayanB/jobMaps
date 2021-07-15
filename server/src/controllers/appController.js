@@ -40,7 +40,7 @@ export const getAllApps = async (req, res) => {
 
 export const updateApp = (req, res) => {
   App.findOneAndUpdate(
-    { _id: req.body.appID },
+    { _id: req.body.ID },
     {
       company: req.body.company,
       jobTitle: req.body.jobTitle,
@@ -49,6 +49,7 @@ export const updateApp = (req, res) => {
       date_interview: req.body.date_interview,
       date_accept: req.body.date_accept,
       date_applied: req.body.date_applied,
+      userId: req.user._id,
     },
     { new: true },
     (err, app) => {
