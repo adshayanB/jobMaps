@@ -70,3 +70,16 @@ export const deleteApp = (req, res) => {
       return res.json({ message: "Deleted App" });
     });
   };
+
+
+export const filterByStatus = async (req, res) => {
+  const appValues = await App.find({ userId: req.user._id, status:req.body.status }, (err, app) => {
+    if (err) {
+      res.send(err);
+    }
+  });
+
+  return res.json(appValues);
+
+
+}
