@@ -7,7 +7,7 @@ function Login() {
     <>
       <div className="register">
         <div className="registerModal">
-          <img src={bgImg} alt="Side Img" />
+          <img src={bgImg} alt="Side Image" />
           <div className="register-area">
             <form className="login-form">
               <div class="logo-placeholder">Logo</div>
