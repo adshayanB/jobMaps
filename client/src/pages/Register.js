@@ -36,8 +36,8 @@ function Register() {
                   <span className="content-name">Password</span>
                 </label>
               </div>
-
-              <div className="links">
+              <button className="button">Register</button>
+              <div className="links borderTop">
                 Already Have An Account?{" "}
                 <b>
                   <Link to="/login">Log In</Link>

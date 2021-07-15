@@ -24,6 +24,7 @@ function Login() {
                   <span className="content-name">Password</span>
                 </label>
               </div>
+              <button className="button">Login</button>
 
               <div className="links">
                 Don't Have An Account?{" "}
