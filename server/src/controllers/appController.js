@@ -63,23 +63,23 @@ export const updateApp = (req, res) => {
 };
 
 export const deleteApp = (req, res) => {
-    App.remove({ _id: req.body.ID }, (err) => {
-      if (err) {
-        res.send(err);
-      }
-      return res.json({ message: "Deleted App" });
-    });
-  };
-
-
-export const filterByStatus = async (req, res) => {
-  const appValues = await App.find({ userId: req.user._id, status:req.body.status }, (err, app) => {
+  App.remove({ _id: req.body.ID }, (err) => {
     if (err) {
       res.send(err);
     }
+    return res.json({ message: "Deleted App" });
   });
+};
+
+export const filterByStatus = async (req, res) => {
+  const appValues = await App.find(
+    { userId: req.user._id, status: req.body.status },
+    (err, app) => {
+      if (err) {
+        res.send(err);
+      }
+    }
+  );
 
   return res.json(appValues);
-
-
-}
+};

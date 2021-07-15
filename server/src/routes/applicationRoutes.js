@@ -13,7 +13,7 @@ import {
   getAllApps,
   updateApp,
   deleteApp,
-  filterByStatus
+  filterByStatus,
 } from "../controllers/appController.js";
 
 const routes = (app) => {
@@ -36,7 +36,7 @@ const routes = (app) => {
     .delete(loginRequired, deleteApp);
 
   app.route("/applications/getAll").get(loginRequired, getAllApps);
-  app.route("/filter/status").get(loginRequired,filterByStatus);
+  app.route("/filter/status").get(loginRequired, filterByStatus);
 };
 
 export default routes;
