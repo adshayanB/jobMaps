@@ -2,11 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // font-family: , sans-serif; (to be updated later)
+  font-family: "Open Sans", sans-serif;
 }
 a {
   text-decoration: none;
   color: inherit;
+}
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
 }
 
 // Media Queries (to be added later)

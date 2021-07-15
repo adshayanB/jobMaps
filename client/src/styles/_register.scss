@@ -7,7 +7,109 @@
   justify-content: center;
   .registerModal {
     height: 75%;
-    width: 80%;
+    width: 70%;
     background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-direction: row;
+    img {
+      width: 35%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .register-area {
+      margin: auto;
+      display: flex;
+      align-items: center;
+      --formelement-height: 70px;
+      --keyColor: #253772;
+      text-align: center;
+      color: #253772;
+
+      .logo-placeholder {
+        padding: 1rem;
+      }
+      form {
+        width: 100%;
+        height: 100%;
+      }
+      .searchInput {
+        color: #333;
+        position: relative;
+        overflow: hidden;
+        height: var(--formelement-height);
+      }
+      .searchInput input {
+        width: 100%;
+        height: 100%;
+        color: #333;
+        padding-top: 30px;
+        border: none;
+        outline: none;
+        border: none;
+        background-color: transparent;
+      }
+      .searchInput label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: #333 1px solid;
+      }
+      .searchInput label::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-bottom: 3px solid var(--keyColor);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+      }
+      .content-name {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+      .searchInput input:focus {
+        outline: none;
+      }
+      .searchInput input:focus + .label-name .content-name,
+      .searchInput input:valid + .label-name .content-name {
+        transform: translateY(-120%);
+        font-size: 0.75rem;
+        left: 0px;
+        color: var(--keyColor);
+      }
+      .searchInput input:focus + .label-name::after,
+      .searchInput input:valid + .label-name::after {
+        transform: translateX(0%);
+      }
+      .links {
+        color: #333;
+        padding: calc(var(--formelement-height) / 4) 0;
+        cursor: pointer;
+      }
+      .button {
+        background-color: #333;
+        color: #7f66c5;
+        padding: 0.75rem 4rem;
+        border-radius: 2rem;
+        width: auto;
+        margin-bottom: calc(var(--formelement-height) / 4);
+        cursor: pointer;
+      }
+      .borderTop {
+        border-top: #333 solid 1px;
+        padding-bottom: calc(var(--formelement-height) / 4);
+      }
+      .marginTop {
+        margin-top: calc(var(--formelement-height) / 4);
+      }
+    }
   }
 }
