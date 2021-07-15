@@ -7,7 +7,7 @@ import {
   userInfo,
 } from "../controllers/userController.js";
 
-import { createApp, getApp } from "../controllers/appController.js";
+import { createApp, getApp, getAllApps } from "../controllers/appController.js";
 
 const routes = (app) => {
   //register route
@@ -25,6 +25,8 @@ const routes = (app) => {
     .route("/applications")
     .post(loginRequired, createApp)
     .get(loginRequired, getApp);
+
+  app.route("/applications/getAll").get(loginRequired, getAllApps);
 };
 
 export default routes;
