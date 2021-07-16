@@ -83,3 +83,16 @@ export const filterByStatus = async (req, res) => {
 
   return res.json(appValues);
 };
+
+export const filterByJobTitle = async (req, res) => {
+  const appValues = await App.find(
+    { userId: req.user._id, jobTitle: req.body.jobTitle },
+    (err, app) => {
+      if (err) {
+        res.send(err);
+      }
+    }
+  );
+
+  return res.json(appValues);
+};

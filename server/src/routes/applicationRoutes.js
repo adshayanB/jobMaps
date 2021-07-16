@@ -14,6 +14,7 @@ import {
   updateApp,
   deleteApp,
   filterByStatus,
+  filterByJobTitle,
 } from "../controllers/appController.js";
 
 const routes = (app) => {
@@ -37,6 +38,7 @@ const routes = (app) => {
 
   app.route("/applications/getAll").get(loginRequired, getAllApps);
   app.route("/filter/status").get(loginRequired, filterByStatus);
+  app.route("/filter/jobTitle").get(loginRequired, filterByJobTitle);
 };
 
 export default routes;
