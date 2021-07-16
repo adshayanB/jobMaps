@@ -94,3 +94,15 @@ export const filterByJobTitle = async (req, res) => {
   );
   return res.json(appValues);
 };
+
+export const filterByCompany = async (req, res) => {
+  const appValues = await App.find(
+    { userId: req.user._id, company: req.body.company },
+    (err, app) => {
+      if (err) {
+        res.send(err);
+      }
+    }
+  );
+  return res.json(appValues);
+};
