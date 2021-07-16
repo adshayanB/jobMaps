@@ -14,8 +14,8 @@
 | :------------- |:-------------| 
 | **Product** | [Sayma Khan](https://saymaakhan.github.io/) | 
 | **Data Science**        | [Adshayan Balendra](https://www.linkedin.com/in/adshayan-balendra/) & [Jaishree Balamurugan](https://jaishreebala.com/) |
-| **Back-end Development** | [Adshayan Balendra](https://www.linkedin.com/in/adshayan-balendra/) |  
-| **Front-end Development** | [Jaishree Balamurugan](https://jaishreebala.com/) & [Sayma Khan](https://saymaakhan.github.io/) | 
+| **Back-end Development** | [Adshayan Balendra](https://www.linkedin.com/in/adshayan-balendra/) & [Avi Patel](https://www.linkedin.com/in/aviipatell/) |  
+| **Front-end Development** | [Avi Patel](https://www.linkedin.com/in/aviipatell/) & [Jaishree Balamurugan](https://jaishreebala.com/) & [Sayma Khan](https://saymaakhan.github.io/) | 
 | **UX** | [Jaishree Balamurugan](https://jaishreebala.com/) & [Sayma Khan](https://saymaakhan.github.io/) |
 
 ---
