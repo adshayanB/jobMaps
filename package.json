@@ -12,6 +12,7 @@
   "author": "Adshayan",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.5",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.17.2",
     "concurrently": "^6.2.0",
