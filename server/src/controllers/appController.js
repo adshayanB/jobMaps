@@ -80,7 +80,6 @@ export const filterByStatus = async (req, res) => {
       }
     }
   );
-
   return res.json(appValues);
 };
 
@@ -93,6 +92,5 @@ export const filterByJobTitle = async (req, res) => {
       }
     }
   );
-
   return res.json(appValues);
 };
