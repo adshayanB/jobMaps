@@ -9,7 +9,9 @@ export const loginRequired = (req, res, next) => {
   if (req.user) {
     next();
   } else {
-    return res.status(401).json({ message: "Unauthorized user!" });
+    return res
+      .status(401)
+      .json({ success: false, message: "Unauthorized user!" });
   }
 };
 
@@ -23,6 +25,7 @@ export const register = (req, res) => {
       if (err) throw err;
       if (user) {
         res.status(401).json({
+          success: false,
           message: "Authentication failed: User with this email exists",
         });
       } else if (!user) {
@@ -35,7 +38,7 @@ export const register = (req, res) => {
             });
           } else {
             user.hashPassword = undefined;
-            return res.json(user);
+            return res.json({ success: true, data: user });
           }
         });
       }
@@ -51,16 +54,19 @@ export const login = (req, res) => {
     (err, user) => {
       if (err) throw err;
       if (!user) {
-        res
-          .status(401)
-          .json({ message: "Authentication failed: No user found" });
+        res.status(401).json({
+          success: false,
+          message: "Authentication failed: No user found",
+        });
       } else if (user) {
         if (!user.comparePassword(req.body.password, user.hashPassword)) {
-          res
-            .status(401)
-            .json({ message: "Authentication failed: Wrong Password" });
+          res.status(401).json({
+            success: false,
+            message: "Authentication failed: Wrong Password",
+          });
         } else {
           return res.json({
+            success: true,
             token: jwt.sign(
               {
                 _id: user.id,
@@ -110,6 +116,6 @@ export const deleteUser = (req, res) => {
     if (err) {
       res.send(err);
     }
-    return res.json({ message: "Deleted User" });
+    return res.json({ success: true, message: "Deleted User" });
   });
 };
