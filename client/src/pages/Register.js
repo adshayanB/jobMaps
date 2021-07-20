@@ -10,6 +10,7 @@ function Register() {
   // State declarations
   const [isRegistered, setIsRegistered] = useState(false);
   const [errors, setErrors] = useState("");
+  const [isWrongPassword, setIsWrongPassword] = useState(false);
 
   // Ref declarations
   const inputEmail = useRef();
@@ -29,20 +30,26 @@ function Register() {
         isEmpty(inputLastName.current.value)
       ) {
         setIsRegistered(false);
+        setIsWrongPassword(false);
         setErrors("Please Fill Out All Required Fields");
         return;
+      } else {
+        setErrors("");
       }
       if (!isEmail(inputEmail.current.value)) {
         setIsRegistered(false);
+        setIsWrongPassword(false);
         setErrors("Please Enter Valid Email");
         return;
+      } else {
+        setErrors("");
       }
       if (!isStrongPassword(inputPassword.current.value)) {
         setIsRegistered(false);
-        setErrors(
-          " Your password must be have at least: 8 characters long, 1 uppercase & 1 lowercase character, 1 symbol & 1 digit"
-        );
+        setIsWrongPassword(true);
         return;
+      } else {
+        setIsWrongPassword(false);
       }
 
       // Send request
@@ -82,6 +89,16 @@ function Register() {
               <div class="logo-placeholder">Logo</div>
               <h1>Sign Up For An Account</h1>
               <Error error={errors} />
+              <div className={isWrongPassword ? "wrongPassword error" : "hide"}>
+                Your password must be have at least: <br />
+                <ul>
+                  <li>8 characters long</li>
+                  <li>1 uppercase character</li>
+                  <li>1 lowercase character</li>
+                  <li>1 symbol</li>
+                  <li>1 digit</li>
+                </ul>
+              </div>
               <div className="searchInput">
                 <input type="text" name="fname" ref={inputFirstName} required />
                 <label className="label-name">

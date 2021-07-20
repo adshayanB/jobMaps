@@ -29,11 +29,26 @@ textarea {
 .error {
   color: #e84e4f;
 }
+.wrongPassword {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  ul {
+    width: fit-content;
+    text-align: left;
+    li:before {
+      content: "✓ ";
+    }
+  }
+}
 ul {
   list-style: none;
 }
-
+.hide {
+  display: none;
+}
 .logo img {
   width: 200px;
   padding: 8%;
