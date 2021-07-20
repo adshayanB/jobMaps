@@ -2,6 +2,9 @@ import React, { useRef, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import bgImg from "../images/employee.gif";
 import Error from "../components/Error";
+import isEmail from "validator/es/lib/isEmail";
+import isEmpty from "validator/es/lib/isEmpty";
+import isStrongPassword from "validator/es/lib/isStrongPassword";
 
 function Register() {
   // State declarations
@@ -18,6 +21,31 @@ function Register() {
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
+      // Validations
+      if (
+        isEmpty(inputEmail.current.value) ||
+        isEmpty(inputPassword.current.value) ||
+        isEmpty(inputFirstName.current.value) ||
+        isEmpty(inputLastName.current.value)
+      ) {
+        setIsRegistered(false);
+        setErrors("Please Fill Out All Required Fields");
+        return;
+      }
+      if (!isEmail(inputEmail.current.value)) {
+        setIsRegistered(false);
+        setErrors("Please Enter Valid Email");
+        return;
+      }
+      if (!isStrongPassword(inputPassword.current.value)) {
+        setIsRegistered(false);
+        setErrors(
+          " Your password must be have at least: 8 characters long, 1 uppercase & 1 lowercase character, 1 symbol & 1 digit"
+        );
+        return;
+      }
+
+      // Send request
       const response = await fetch("auth/register", {
         method: "POST",
         body: JSON.stringify({
