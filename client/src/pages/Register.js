@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import bgImg from "../images/employee.gif";
+import logo from "../images/logo.png";
 import Error from "../components/Error";
 import isEmail from "validator/es/lib/isEmail";
 import isEmpty from "validator/es/lib/isEmpty";
@@ -86,7 +87,9 @@ function Register() {
           <img src={bgImg} alt="Side Image" />
           <div className="register-area">
             <form className="login-form">
-              <div class="logo-placeholder">Logo</div>
+              <div class="logo-placeholder">
+                <img src={logo} alt="Logo" />
+              </div>
               <h1>Sign Up For An Account</h1>
               <Error error={errors} />
               <div className={isWrongPassword ? "wrongPassword error" : "hide"}>
