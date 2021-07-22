@@ -43,8 +43,6 @@ const routes = (app) => {
   app.route("/filter/jobTitle").get(loginRequired, filterByJobTitle);
   app.route("/filter/company").get(loginRequired, filterByCompany);
   app.route("/sort/jobTitle").get(loginRequired, sortByJobTitle);
-
-
 };
 
 export default routes;
