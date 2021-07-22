@@ -110,7 +110,7 @@ export const filterByCompany = async (req, res) => {
 export const sortByJobTitle = async (req, res) => {
   const jobValues = await App.find()
     .collation({ locale: "en", strength: 2 })
-    .sort({ jobTitle: 1 })
+    .sort({ jobTitle: req.body.Order })
     .then((err) => {
       if (err) {
         res.send(err);
@@ -123,7 +123,7 @@ export const sortByJobTitle = async (req, res) => {
 export const sortByCompany = async (req, res) => {
   const jobValues = await App.find()
     .collation({ locale: "en", strength: 2 })
-    .sort({ company: 1 })
+    .sort({ company: req.body.Order })
     .then((err) => {
       if (err) {
         res.send(err);
