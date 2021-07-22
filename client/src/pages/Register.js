@@ -84,7 +84,7 @@ function Register() {
       <div className="register">
         {isRegistered ? <Redirect to="/login" /> : ""}
         <div className="registerModal">
-          <img src={bgImg} alt="Side Image" />
+          <img src={bgImg} alt="Side Image" className="bgImg" />
           <div className="register-area">
             <form className="login-form">
               <div class="logo-placeholder">

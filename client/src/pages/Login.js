@@ -47,7 +47,7 @@ function Login() {
         {isLoggedIn ? <Redirect to="/home" /> : ""}
 
         <div className="registerModal">
-          <img src={bgImg} alt="Side Image" />
+          <img src={bgImg} alt="Side Image" className="bgImg" />
           <div className="register-area">
             <form className="login-form">
               <div class="logo-placeholder">
