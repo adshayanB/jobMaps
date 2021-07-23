@@ -107,28 +107,29 @@ export const filterByCompany = async (req, res) => {
   return res.json(appValues);
 };
 
-export const sortByJobTitle = async (req, res) => {
-  const jobValues = await App.find()
-    .collation({ locale: "en", strength: 2 })
-    .sort({ jobTitle: req.body.Order })
-    .then((err) => {
-      if (err) {
-        res.send(err);
-      }
-    });
-
-  return res.json(jobValues);
-};
-
-export const sortByCompany = async (req, res) => {
-  const jobValues = await App.find()
-    .collation({ locale: "en", strength: 2 })
-    .sort({ company: req.body.Order })
-    .then((err) => {
-      if (err) {
-        res.send(err);
-      }
-    });
-
-  return res.json(jobValues);
+export const sort = async (req, res) => {
+  const searchField = req.body.field;
+  if (searchField == "jobTitle") {
+    const jobValues = await App.find({ userId: req.user._id })
+      .collation({ locale: "en", strength: 2 })
+      .sort({ jobTitle: req.body.order })
+      .then((err) => {
+        if (err) {
+          res.send(err);
+        }
+      });
+    return res.json(jobValues);
+  } else if (searchField == "company") {
+    const jobValues = await App.find({ userId: req.user._id })
+      .collation({ locale: "en", strength: 2 })
+      .sort({ company: req.body.order })
+      .then((err) => {
+        if (err) {
+          res.send(err);
+        }
+      });
+    return res.json(jobValues);
+  } else {
+    return res.json({ message: "Not support sort field" });
+  }
 };
