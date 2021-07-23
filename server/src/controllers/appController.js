@@ -135,13 +135,16 @@ export const sort = async (req, res) => {
 };
 
 export const sortByDate = async (req, res) => {
-  const appValues = await App.find({ userId: req.user._id })
-    .sort({ date_offer: req.body.order })
-    .then((err) => {
-      if (err) {
-        res.send(err);
-      }
-    });
+  const dateFields = req.body.dateField;
+  if (dateFields == "dateOffer") {
+    const appValues = await App.find({ userId: req.user._id })
+      .sort({ date_offer: req.body.order })
+      .then((err) => {
+        if (err) {
+          res.send(err);
+        }
+      });
 
-  return res.json(appValues);
+    return res.json(appValues);
+  }
 };
