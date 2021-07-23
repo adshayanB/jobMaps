@@ -133,3 +133,15 @@ export const sort = async (req, res) => {
     return res.json({ message: "Not support sort field" });
   }
 };
+
+export const sortByDate = async (req, res) => {
+  const appValues = await App.find({ userId: req.user._id })
+    .sort({ date_offer: req.body.order })
+    .then((err) => {
+      if (err) {
+        res.send(err);
+      }
+    });
+
+  return res.json(appValues);
+};
