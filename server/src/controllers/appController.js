@@ -110,7 +110,7 @@ export const filterByCompany = async (req, res) => {
 export const sort = async (req, res) => {
   const searchField = req.body.field;
   if (searchField == "jobTitle") {
-    const jobValues = await App.find({ userId: req.user._id})
+    const jobValues = await App.find({ userId: req.user._id })
       .collation({ locale: "en", strength: 2 })
       .sort({ jobTitle: req.body.order })
       .then((err) => {
@@ -119,20 +119,17 @@ export const sort = async (req, res) => {
         }
       });
     return res.json(jobValues);
-  }
-  else if (searchField == 'company'){
-    const jobValues = await App.find({ userId: req.user._id})
-    .collation({ locale: "en", strength: 2 })
-    .sort({ company: req.body.order })
-    .then((err) => {
-      if (err) {
-        res.send(err);
-      }
-    });
-  return res.json(jobValues);
-
-  }
-  else{
-    return res.json({message: "Not support sort field"})
+  } else if (searchField == "company") {
+    const jobValues = await App.find({ userId: req.user._id })
+      .collation({ locale: "en", strength: 2 })
+      .sort({ company: req.body.order })
+      .then((err) => {
+        if (err) {
+          res.send(err);
+        }
+      });
+    return res.json(jobValues);
+  } else {
+    return res.json({ message: "Not support sort field" });
   }
 };
