@@ -17,7 +17,7 @@ import {
   filterByJobTitle,
   filterByCompany,
   sort,
-  sortByDate
+  sortByDate,
 } from "../controllers/appController.js";
 
 const routes = (app) => {
@@ -45,7 +45,6 @@ const routes = (app) => {
   app.route("/filter/company").get(loginRequired, filterByCompany);
   app.route("/sort/field").get(loginRequired, sort);
   app.route("/sort/date").get(loginRequired, sortByDate);
-
 };
 
 export default routes;
