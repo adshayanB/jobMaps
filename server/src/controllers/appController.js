@@ -147,4 +147,41 @@ export const sortByDate = async (req, res) => {
 
     return res.json(appValues);
   }
+  else if (dateFields == "dateInterview") {
+    const appValues = await App.find({ userId: req.user._id })
+      .sort({ date_interview: req.body.order })
+      .then((err) => {
+        if (err) {
+          res.send(err);
+        }
+      });
+
+    return res.json(appValues);
+  }
+  else if (dateFields == "dateAccept") {
+    const appValues = await App.find({ userId: req.user._id })
+      .sort({ date_accept: req.body.order })
+      .then((err) => {
+        if (err) {
+          res.send(err);
+        }
+      });
+
+    return res.json(appValues);
+  }
+  else if (dateFields == "dateApplied") {
+    const appValues = await App.find({ userId: req.user._id })
+      .sort({ date_applied: req.body.order })
+      .then((err) => {
+        if (err) {
+          res.send(err);
+        }
+      });
+
+    return res.json(appValues);
+  }
+  else{
+    return res.json({ message: "Not supported date field" });
+
+  }
 };
