@@ -130,7 +130,7 @@ export const sort = async (req, res) => {
       });
     return res.json(jobValues);
   } else {
-    return res.json({ message: "Not support sort field" });
+    return res.json({ message: "Not supported sort field" });
   }
 };
 
