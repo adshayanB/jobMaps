@@ -22,6 +22,7 @@ import {
   countCompanyStatus,
   countCompanyStatusUser,
   heardBackJobTitle,
+  heardBackCompany,
 } from "../controllers/appController.js";
 
 const routes = (app) => {
@@ -54,7 +55,7 @@ const routes = (app) => {
   app.route("/data/company").get(loginRequired, countCompanyStatus);
   app.route("/data/companyUser").get(loginRequired, countCompanyStatusUser);
   app.route("/data/heardback/jobTitle").get(loginRequired, heardBackJobTitle);
-
+  app.route("/data/heardback/company").get(loginRequired, heardBackCompany);
 };
 
 export default routes;
