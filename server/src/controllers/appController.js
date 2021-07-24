@@ -47,7 +47,7 @@ export const countStatus = async (req, res) => {
 
   const values = {};
 
-  const status = ["applied", "interviewing", "accepted", "declined"];
+  const status = ["applied", "interviewing", "accepted", "declined", "ghosted"];
   status.forEach((item) => {
     values[item] = 0;
   });
@@ -64,6 +64,9 @@ export const countStatus = async (req, res) => {
     }
     if (item["_doc"]["status"] == "declined") {
       values["declined"] += 1;
+    }
+    if (item["_doc"]["status"] == "ghosted") {
+      values["ghosted"] += 1;
     }
   });
   return res.json(values);
