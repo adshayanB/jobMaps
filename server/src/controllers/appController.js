@@ -38,6 +38,40 @@ export const getAllApps = async (req, res) => {
   return res.json(appValues);
 };
 
+export const countStatus = async (req, res) => {
+  const appValues = await App.find({ userId: req.user._id }, (err, app) => {
+    if (err) {
+      res.send(err);
+    }
+  });
+
+  const values = {};
+
+  const status = ["applied", "interviewing", "accepted", "declined", "ghosted"];
+  status.forEach((item) => {
+    values[item] = 0;
+  });
+
+  appValues.forEach((item) => {
+    if (item["_doc"]["status"] == "applied") {
+      values["applied"] += 1;
+    }
+    if (item["_doc"]["status"] == "interviewing") {
+      values["interviewing"] += 1;
+    }
+    if (item["_doc"]["status"] == "accepted") {
+      values["accepted"] += 1;
+    }
+    if (item["_doc"]["status"] == "declined") {
+      values["declined"] += 1;
+    }
+    if (item["_doc"]["status"] == "ghosted") {
+      values["ghosted"] += 1;
+    }
+  });
+  return res.json(values);
+};
+
 export const updateApp = (req, res) => {
   App.findOneAndUpdate(
     { _id: req.body.ID },
