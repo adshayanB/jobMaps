@@ -19,7 +19,7 @@ import {
   sort,
   sortByDate,
   countStatus,
-  countCompanyStatus
+  countCompanyStatus,
 } from "../controllers/appController.js";
 
 const routes = (app) => {
@@ -50,7 +50,6 @@ const routes = (app) => {
 
   app.route("/data/status").get(loginRequired, countStatus);
   app.route("/data/company").get(loginRequired, countCompanyStatus);
-
 };
 
 export default routes;
