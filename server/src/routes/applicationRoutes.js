@@ -18,7 +18,7 @@ import {
   filterByCompany,
   sort,
   sortByDate,
-  countStatus
+  countStatus,
 } from "../controllers/appController.js";
 
 const routes = (app) => {
