@@ -3,6 +3,8 @@ import { Link, Redirect } from "react-router-dom";
 import bgImg from "../images/employee.gif";
 import logo from "../images/logo.png";
 import Error from "../components/Error";
+import isEmail from "validator/es/lib/isEmail";
+import isEmpty from "validator/es/lib/isEmpty";
 
 function Login() {
   // State declarations
@@ -17,6 +19,25 @@ function Login() {
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
+      // Validations
+      if (
+        isEmpty(inputEmail.current.value) ||
+        isEmpty(inputPassword.current.value)
+      ) {
+        setIsLoggedIn(false);
+        setErrors("Please Fill Out All Required Fields");
+        return;
+      } else {
+        setErrors("");
+      }
+      if (!isEmail(inputEmail.current.value)) {
+        setIsLoggedIn(false);
+        setErrors("Please Enter Valid Email");
+        return;
+      } else {
+        setErrors("");
+      }
+      // Send request
       const response = await fetch("auth/login", {
         method: "POST",
         body: JSON.stringify({
