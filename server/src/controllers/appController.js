@@ -169,6 +169,29 @@ export const heardBackJobTitle = async (req, res) => {
   return res.json(responses);
 };
 
+export const heardBackCompany = async (req, res) => {
+  const responses = {};
+  const appValues = await App.find({ userId: req.user._id }, (err, app) => {
+    if (err) {
+      res.send(err);
+    }
+  });
+  appValues.forEach((item) => {
+    if (
+      item["_doc"]["status"] == "interviewing" ||
+      item["_doc"]["status"] == "accepted"
+    ) {
+      if (item["_doc"]["company"] in responses) {
+        responses[item["_doc"]["company"]] += 1;
+      } else {
+        responses[item["_doc"]["company"]] = 1;
+      }
+    }
+  });
+
+  return res.json(responses);
+};
+
 export const updateApp = (req, res) => {
   App.findOneAndUpdate(
     { _id: req.body.ID },
