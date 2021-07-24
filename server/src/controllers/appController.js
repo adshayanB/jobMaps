@@ -84,7 +84,7 @@ export const countCompanyStatus = async (req, res) => {
 
   const values = {};
 
-  const status = ["applied", "interviewing", "accepted", "declined", "ghosted"];
+  const status = ["applied", "interviews", "accepted", "declined", "ghosted"];
   status.forEach((item) => {
     values[item] = 0;
   });
@@ -94,7 +94,7 @@ export const countCompanyStatus = async (req, res) => {
       values["applied"] += 1;
     }
     if (item["_doc"]["status"] == "interviewing") {
-      values["interviewing"] += 1;
+      values["interviews"] += 1;
     }
     if (item["_doc"]["status"] == "accepted") {
       values["accepted"] += 1;
