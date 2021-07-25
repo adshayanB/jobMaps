@@ -147,49 +147,30 @@ export const countCompanyStatusUser = async (req, res) => {
 };
 
 export const search = async (req, res) => {
-  const appValues = await App.find({ userId: req.user._id }, (err, app) => {
+  const searchValues = await App.find({ userId: req.user._id, company:req.body.searchString }, (err, app) => {
     if (err) {
       res.send(err);
     }
   });
 
-  const searchString = req.body.searchString;
-  const found = "";
-
-  appValues.forEach((item)=>{
-    if (item["_doc"]['company'] == searchString){
-      found ='company';
-      break;
-
-    }
-    else if (item['_doc']['jobTItle']== searchString){
-      found ='jobTitle';
-      break;
-    }
-  });
-
-  if (found == 'company'){
-    const searchValues = await App.find({ userId: req.user._id, comapny:searchString }, (err, app) => {
-      if (err) {
-        res.send(err);
-      }
-    });
-
+  if (searchValues.length > 0){
     return res.json(searchValues);
-  }
-
-  else if(found == 'jobTitle'){
-    const searchValues = await App.find({ userId: req.user._id, jobTitle:searchString }, (err, app) => {
-      if (err) {
-        res.send(err);
-      }
-    });
-
-    return res.json(searchValues);
-
   }
   else{
-    return res.json({message: "No search did not return any results"})
+    const searchValues1 = await App.find({ userId: req.user._id, jobTitle:req.body.searchString }, (err, app) => {
+      if (err) {
+        res.send(err);
+      }
+    });
+
+    if(searchValues1.length > 0){
+      return res.json(searchValues1);
+    }
+    else{
+      //Is this a good message? 
+      return res.json({message:"Your search did not get any results"})
+    }
+
   }
 
 };
