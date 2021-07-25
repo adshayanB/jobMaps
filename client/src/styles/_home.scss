@@ -1,0 +1,115 @@
+.homeStyles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+  .homeNav {
+    background-color: #333;
+    display: flex;
+    width: 250px;
+    height: 100vh;
+    padding: 0 1.5rem;
+    color: #fff;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      li {
+        padding: 2rem 0rem;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+      li:hover {
+        color: rgba(116, 190, 193, 0.75);
+        transition: 0.5s;
+      }
+      .selected {
+        color: #74bec1;
+        font-weight: bolder;
+      }
+    }
+  }
+  .filters {
+    // width: 15%;
+    flex-grow: 1;
+    display: flex;
+
+    height: 100vh;
+    display: flex;
+    background-color: #fef;
+  }
+  .jobApps {
+    flex-grow: 5;
+    height: 100vh;
+    overflow: scroll;
+    .header {
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1rem;
+      .green-btn {
+        font-size: 1.15rem;
+        color: #00230a;
+        background-color: #aceeac;
+        padding: 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+    table {
+      width: 100%;
+      tr:first-child {
+        position: sticky;
+      }
+      tr {
+        height: 60px;
+        box-shadow: 0px 4px 4px rgba(116, 190, 193, 0.15);
+        th,
+        td {
+          padding: 10px;
+          .deleteJob {
+            opacity: 0;
+            transition: 0.5s;
+            height: 1.5rem;
+            cursor: pointer;
+          }
+        }
+        th {
+          font-weight: bold;
+          text-align: left;
+          position: sticky;
+        }
+      }
+      tr:hover {
+        box-shadow: 0px 4px 4px rgba(116, 190, 193, 0.5);
+        transition: 0.5s;
+        img {
+          opacity: 1;
+        }
+      }
+      .status {
+        padding: 0.25rem 0.5rem;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+      .accepted {
+        background-color: #aceeac;
+        color: #0a7349;
+      }
+      .declined {
+        background-color: #f1c8c0;
+        color: #fb6962;
+      }
+      .interview {
+        background-color: #a8e4ef;
+        color: #2468b8;
+      }
+      .applied {
+        background-color: #f7dc8b;
+        color: #b18500;
+      }
+    }
+  }
+}
