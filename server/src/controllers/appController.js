@@ -146,6 +146,37 @@ export const countCompanyStatusUser = async (req, res) => {
   return res.json(values);
 };
 
+export const search = async (req, res) => {
+  const searchValues = await App.find(
+    { userId: req.user._id, company: req.body.searchString },
+    (err, app) => {
+      if (err) {
+        res.send(err);
+      }
+    }
+  );
+
+  if (searchValues.length > 0) {
+    return res.json(searchValues);
+  } else {
+    const searchValues1 = await App.find(
+      { userId: req.user._id, jobTitle: req.body.searchString },
+      (err, app) => {
+        if (err) {
+          res.send(err);
+        }
+      }
+    );
+
+    if (searchValues1.length > 0) {
+      return res.json(searchValues1);
+    } else {
+      //Is this a good message?
+      return res.json({ message: "Your search did not get any results" });
+    }
+  }
+};
+
 export const heardBackJobTitle = async (req, res) => {
   const responses = {};
   const appValues = await App.find({ userId: req.user._id }, (err, app) => {
