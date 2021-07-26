@@ -1,11 +1,11 @@
 import React from "react";
-
+import logo from "../images/logo.png";
 function Homenav() {
   return (
     <div>
       <div className="homeNav">
+        <img src={logo} alt="Logo" />
         <ul>
-          <li>User Name</li>
           <li className="selected">Job Applications</li>
           <li>Dashboard</li>
           <li>Calender</li>

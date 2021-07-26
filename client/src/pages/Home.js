@@ -6,9 +6,9 @@ import Jobapps from "../components/Jobapps";
 function Home() {
   return (
     <>
+      <Homenav />
       <div className="homeStyles">
-        <Homenav />
-        {/* <Filters /> */}
+        <Filters />
         <Jobapps />
       </div>
     </>
