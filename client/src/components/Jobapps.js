@@ -5,7 +5,15 @@ function Jobapps() {
     <div className="jobApps">
       <div className="header">
         Job Applications
-        <div className="green-btn">Add New Application</div>
+        <div className="row">
+          <div className="searchInput">
+            <input type="text" name="fname" required />
+            <label className="label-name">
+              <span className="content-name">Search</span>
+            </label>
+          </div>
+          <div className="green-btn">Add New Application</div>
+        </div>
       </div>
       <table>
         <tr>
