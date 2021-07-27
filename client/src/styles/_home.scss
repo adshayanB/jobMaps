@@ -4,6 +4,67 @@
   justify-content: space-evenly;
   overflow: hidden;
   height: calc(100vh - 80px);
+
+  /* Style search bars */
+  .searchInput {
+    color: var(--keyColor);
+    position: relative;
+    overflow: hidden;
+    height: 2.75rem;
+  }
+  .searchInput input {
+    width: 100%;
+    height: 100%;
+    color: var(--keyColor);
+    padding-top: 1rem;
+    border: none;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+  }
+  .searchInput label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--keyColor);
+  }
+  .searchInput label::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid var(--keyColor);
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+  }
+  .content-name {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+  }
+  .searchInput input:focus {
+    outline: none;
+  }
+  .searchInput input:focus + .label-name .content-name,
+  .searchInput input:valid + .label-name .content-name {
+    transform: translateY(-120%);
+    font-size: 0.75rem;
+    left: 0px;
+    color: var(--keyColor);
+  }
+  .searchInput input:focus + .label-name::after,
+  .searchInput input:valid + .label-name::after {
+    transform: translateX(0%);
+  }
   .filters {
     width: 10%;
     flex-grow: 1;
@@ -15,6 +76,7 @@
     color: #fff;
     padding: 1rem;
     overflow-y: scroll;
+    --keyColor: #fff;
 
     h1 {
       font-size: 1.5rem;
@@ -35,6 +97,7 @@
         font-size: 1.1rem;
         padding-bottom: 0.75rem;
       }
+
       /* Style checkboxes */
 
       /* The container */
@@ -121,13 +184,18 @@
       justify-content: space-between;
       padding: 1rem;
       padding-left: 2rem;
-      .green-btn {
-        font-size: 1.15rem;
-        color: #00230a;
-        background-color: #aceeac;
-        padding: 0.5rem;
-        border-radius: 5px;
-        cursor: pointer;
+      .row {
+        display: flex;
+        --keyColor: #253772;
+        .green-btn {
+          font-size: 1.15rem;
+          color: #00230a;
+          background-color: #aceeac;
+          padding: 0.5rem;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-left: 1rem;
+        }
       }
     }
     table {
