@@ -24,7 +24,7 @@
     .filter-section {
       .filter-item {
         margin-top: 1.25rem;
-        max-height: 200px;
+        // max-height: 200px;
         overflow-y: scroll;
       }
       .filter-title {
@@ -120,6 +120,7 @@
       flex-direction: row;
       justify-content: space-between;
       padding: 1rem;
+      padding-left: 2rem;
       .green-btn {
         font-size: 1.15rem;
         color: #00230a;
@@ -137,6 +138,12 @@
       tr {
         height: 60px;
         box-shadow: 0px 4px 4px rgba(116, 190, 193, 0.15);
+        // background-color: red;
+        td:first-child,
+        th:first-child {
+          // background-color: green;
+          padding-left: 2rem;
+        }
         th,
         td {
           padding: 10px;
