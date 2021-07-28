@@ -103,6 +103,9 @@ function Login() {
                   <Link to="/register">Sign Up</Link>
                 </b>
               </div>
+              <div class="recoverPasswordLink">
+                <Link to="/recover-password">Forgot Password</Link>
+              </div>
             </form>
           </div>
         </div>
