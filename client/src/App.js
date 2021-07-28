@@ -1,6 +1,8 @@
 import React from "react";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Recoverpassword from "./pages/Recoverpassword";
+import Resetpassword from "./pages/ResetPassword";
 import Landingpage from "./pages/Landingpage";
 import Features from "./components/Features";
 import About from "./components/About";
@@ -25,6 +27,12 @@ const App = () => {
         </Route>
         <Route path="/login" exact>
           <Login />
+        </Route>
+        <Route path="/recover-password" exact>
+          <Recoverpassword />
+        </Route>
+        <Route path="/reset-password/:token" exact>
+          <Resetpassword />
         </Route>
         <Route path="/home" exact>
           <Home />

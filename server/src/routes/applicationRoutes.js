@@ -5,6 +5,8 @@ import {
   register,
   updateUser,
   userInfo,
+  recoverPassword,
+  resetPassword,
 } from "../controllers/userController.js";
 
 import {
@@ -24,6 +26,12 @@ const routes = (app) => {
 
   //login
   app.route("/auth/login").post(login);
+
+  // recover password (get reset password email link)
+  app.route("/recover-password").post(recoverPassword);
+  // reset password
+  app.route("/reset-password/:token").post(resetPassword);
+
   //UserStuff
   app
     .route("/userInfo")
@@ -41,7 +49,6 @@ const routes = (app) => {
   app.route("/filter/status").get(loginRequired, filterByStatus);
   app.route("/filter/jobTitle").get(loginRequired, filterByJobTitle);
   app.route("/filter/company").get(loginRequired, filterByCompany);
-
 };
 
 export default routes;

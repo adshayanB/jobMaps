@@ -3,24 +3,20 @@ import { Link, Redirect } from "react-router-dom";
 import bgImg from "../images/employee.gif";
 import Error from "../components/Error";
 
-function Login() {
-  // State declarations
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+function Resetpassword() {
   const [errors, setErrors] = useState("");
 
-  // Ref declarations
-  const inputEmail = useRef();
   const inputPassword = useRef();
+  const inputPasswordConf = useRef();
 
-  // Login Handler Function
-  const loginHandler = async (e) => {
+  const resetPasswordHandler = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("auth/login", {
+      const response = await fetch("reset-password", {
         method: "POST",
         body: JSON.stringify({
-          email: inputEmail.current.value,
           password: inputPassword.current.value,
+          confirmPassword: inputPasswordConf.current.value,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -30,34 +26,23 @@ function Login() {
       console.log(data);
       if (data.success) {
         setErrors("");
-        setIsLoggedIn(true);
       } else {
-        setIsLoggedIn(false);
         setErrors(data.message);
       }
     } catch (err) {
-      console.log(err);
+      console.log("Error detected!:" + err);
     }
   };
 
   return (
     <>
       <div className="register">
-        {isLoggedIn ? <Redirect to="/home" /> : ""}
-
         <div className="registerModal">
-          <img src={bgImg} alt="Side Image" />
+          <img src={bgImg} alt="Side" />
           <div className="register-area">
-            <form className="login-form">
+            <form className="login-form" method="post" action="">
               <div class="logo-placeholder">Logo</div>
-              <h1>Log In To Your Account</h1>
-              <Error error={errors} />
-              <div className="searchInput">
-                <input type="text" name="email" ref={inputEmail} required />
-                <label className="label-name">
-                  <span className="content-name">Email</span>
-                </label>
-              </div>
+              <h1>Reset Password</h1>
               <div className="searchInput">
                 <input
                   type="password"
@@ -69,19 +54,20 @@ function Login() {
                   <span className="content-name">Password</span>
                 </label>
               </div>
-              <button onClick={loginHandler} className="button">
-                Login
+              <div className="searchInput">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  ref={inputPasswordConf}
+                  required
+                />
+                <label className="label-name">
+                  <span className="content-name">Confirm Password</span>
+                </label>
+              </div>
+              <button className="button" onClick={resetPasswordHandler}>
+                Reset Password
               </button>
-
-              <div className="links">
-                Don't Have An Account?{" "}
-                <b>
-                  <Link to="/register">Sign Up</Link>
-                </b>
-              </div>
-              <div class="recoverPasswordLink">
-                <Link to="/recover-password">Forgot Password</Link>
-              </div>
             </form>
           </div>
         </div>
@@ -89,4 +75,4 @@ function Login() {
     </>
   );
 }
-export default Login;
+export default Resetpassword;
