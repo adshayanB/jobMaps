@@ -18,6 +18,14 @@ import {
   filterByStatus,
   filterByJobTitle,
   filterByCompany,
+  sort,
+  sortByDate,
+  countStatus,
+  countCompanyStatus,
+  countCompanyStatusUser,
+  heardBackJobTitle,
+  heardBackCompany,
+  search,
 } from "../controllers/appController.js";
 
 const routes = (app) => {
@@ -49,6 +57,18 @@ const routes = (app) => {
   app.route("/filter/status").get(loginRequired, filterByStatus);
   app.route("/filter/jobTitle").get(loginRequired, filterByJobTitle);
   app.route("/filter/company").get(loginRequired, filterByCompany);
+
+  app.route("/sort/field").get(loginRequired, sort);
+  app.route("/sort/date").get(loginRequired, sortByDate);
+
+  app.route("/data/status").get(loginRequired, countStatus);
+  app.route("/data/company").get(loginRequired, countCompanyStatus);
+  app.route("/data/companyUser").get(loginRequired, countCompanyStatusUser);
+  app.route("/data/heardback/jobTitle").get(loginRequired, heardBackJobTitle);
+  app.route("/data/heardback/company").get(loginRequired, heardBackCompany);
+
+  app.route("/search").get(loginRequired, search);
+
 };
 
 export default routes;

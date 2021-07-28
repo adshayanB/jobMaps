@@ -1,0 +1,290 @@
+.homeStyles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+  height: calc(100vh - 80px);
+
+  /* Style search bars */
+  .searchInput {
+    color: var(--keyColor);
+    position: relative;
+    overflow: hidden;
+    height: 2.75rem;
+  }
+  .searchInput input {
+    width: 100%;
+    height: 100%;
+    color: var(--keyColor);
+    padding-top: 1rem;
+    border: none;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+  }
+  .searchInput label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--keyColor);
+  }
+  .searchInput label::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid var(--keyColor);
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+  }
+  .content-name {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+  }
+  .searchInput input:focus {
+    outline: none;
+  }
+  .searchInput input:focus + .label-name .content-name,
+  .searchInput input:valid + .label-name .content-name {
+    transform: translateY(-120%);
+    font-size: 0.75rem;
+    left: 0px;
+    color: var(--keyColor);
+  }
+  .searchInput input:focus + .label-name::after,
+  .searchInput input:valid + .label-name::after {
+    transform: translateX(0%);
+  }
+  .filters {
+    width: 10%;
+    flex-grow: 1;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #333;
+    z-index: 100;
+    color: #fff;
+    padding: 1rem;
+    overflow-y: scroll;
+    --keyColor: #fff;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: lighter;
+      padding: 1rem 0;
+    }
+    .filter-section {
+      .filter-item {
+        margin-top: 1.25rem;
+        max-height: 200px;
+        overflow-y: scroll;
+      }
+      .filter-title {
+        position: sticky;
+        top: 0;
+        background-color: #333;
+        z-index: 3;
+        font-size: 1.1rem;
+        padding-bottom: 0.75rem;
+      }
+
+      /* Style checkboxes */
+
+      /* The container */
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 1.75rem;
+        margin-bottom: 0.35rem;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-size: 1rem;
+      }
+
+      /* Hide the browser's default checkbox */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1.25rem;
+        width: 1.25rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 3px;
+        transition: 0.5s;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: rgba(173, 235, 190, 0.75);
+      }
+
+      /* When the checkbox is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        background-color: #adebbe;
+      }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the checkmark when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Style the checkmark/indicator */
+      .container .checkmark:after {
+        left: 6px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid #444;
+        border-radius: 2px;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .jobApps {
+    flex-grow: 5;
+    height: 100vh;
+    overflow: scroll;
+    .header {
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1rem;
+      padding-left: 2rem;
+      .row {
+        display: flex;
+        --keyColor: #253772;
+        .green-btn {
+          font-size: 1.15rem;
+          color: #00230a;
+          background-color: #aceeac;
+          padding: 0.5rem;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-left: 1rem;
+        }
+      }
+    }
+    table {
+      width: 100%;
+      tr:first-child {
+        position: sticky;
+      }
+      tr {
+        height: 60px;
+        box-shadow: 0px 4px 4px rgba(116, 190, 193, 0.15);
+        // background-color: red;
+        td:first-child,
+        th:first-child {
+          // background-color: green;
+          padding-left: 2rem;
+        }
+        th,
+        td {
+          padding: 10px;
+          .deleteJob {
+            opacity: 0;
+            transition: 0.5s;
+            height: 1.5rem;
+            cursor: pointer;
+          }
+        }
+        th {
+          font-weight: bold;
+          text-align: left;
+          position: sticky;
+        }
+      }
+      tr:hover {
+        box-shadow: 0px 4px 4px rgba(116, 190, 193, 0.5);
+        transition: 0.5s;
+        img {
+          opacity: 1;
+        }
+      }
+      .status {
+        padding: 0.25rem 0.5rem;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+      .accepted {
+        background-color: #aceeac;
+        color: #0a7349;
+      }
+      .declined {
+        background-color: #f1c8c0;
+        color: #fb6962;
+      }
+      .interview {
+        background-color: #a8e4ef;
+        color: #2468b8;
+      }
+      .applied {
+        background-color: #f7dc8b;
+        color: #b18500;
+      }
+    }
+  }
+}
+.homeNav {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  padding: 0 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  img {
+    height: 2.5rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    li {
+      padding: 2rem 1rem;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+    li:hover {
+      color: rgba(116, 190, 193, 0.9);
+      transition: 0.5s;
+    }
+    .selected {
+      color: #74bec1;
+      font-weight: bolder;
+    }
+  }
+}

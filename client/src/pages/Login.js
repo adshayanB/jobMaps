@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import bgImg from "../images/employee.gif";
+import logo from "../images/logo.png";
 import Error from "../components/Error";
+import isEmail from "validator/es/lib/isEmail";
+import isEmpty from "validator/es/lib/isEmpty";
 
 function Login() {
   // State declarations
@@ -16,6 +19,25 @@ function Login() {
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
+      // Validations
+      if (
+        isEmpty(inputEmail.current.value) ||
+        isEmpty(inputPassword.current.value)
+      ) {
+        setIsLoggedIn(false);
+        setErrors("Please Fill Out All Required Fields");
+        return;
+      } else {
+        setErrors("");
+      }
+      if (!isEmail(inputEmail.current.value)) {
+        setIsLoggedIn(false);
+        setErrors("Please Enter Valid Email");
+        return;
+      } else {
+        setErrors("");
+      }
+      // Send request
       const response = await fetch("auth/login", {
         method: "POST",
         body: JSON.stringify({
@@ -46,10 +68,12 @@ function Login() {
         {isLoggedIn ? <Redirect to="/home" /> : ""}
 
         <div className="registerModal">
-          <img src={bgImg} alt="Side Image" />
+          <img src={bgImg} alt="Side Image" className="bgImg" />
           <div className="register-area">
             <form className="login-form">
-              <div class="logo-placeholder">Logo</div>
+              <div class="logo-placeholder">
+                <img src={logo} alt="Logo" />
+              </div>
               <h1>Log In To Your Account</h1>
               <Error error={errors} />
               <div className="searchInput">
