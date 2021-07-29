@@ -45,7 +45,6 @@ function Jobapps() {
         <tr>
           <th>company</th>
           <th>job title</th>
-          <th>job field</th>
           <th>status</th>
           <th>date applied</th>
           <th>date of interview</th>
@@ -57,11 +56,10 @@ function Jobapps() {
             <tr>
               <td>{jobApp.company}</td>
               <td>{jobApp.jobTitle}</td>
-              <td>job field</td>
               <td>
                 <div className={"status " + jobApp.status}>{jobApp.status}</div>
               </td>
-              <td>10/10/2020</td>
+              <td>{jobApp.date_applied.substring(0, 10)}</td>
               <td>-</td>
               <td>-</td>
               <td>-</td>
