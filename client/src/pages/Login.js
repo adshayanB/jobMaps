@@ -51,6 +51,7 @@ function Login() {
       const data = await response.json();
       console.log(data);
       if (data.success) {
+        localStorage.setItem("token", data.token);
         setErrors("");
         setIsLoggedIn(true);
       } else {
