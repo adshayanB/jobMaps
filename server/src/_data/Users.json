@@ -5,5 +5,12 @@
     "lastName": "bar",
     "email": "acb@gmail.com",
     "password": "acbdefg"
+  },
+  {
+    "_id": "6101de3faf1974197ec25ef4",
+    "firstName": "jane",
+    "lastName": "doe",
+    "email": "jane@gmail.com",
+    "password": "123456"
   }
 ]
