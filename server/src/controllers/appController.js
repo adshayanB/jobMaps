@@ -35,7 +35,7 @@ export const getAllApps = async (req, res) => {
     }
   });
 
-  return res.json(appValues);
+  return res.json({ success: true, data: appValues });
 };
 
 export const countStatus = async (req, res) => {

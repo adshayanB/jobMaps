@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import bin from "../images/bin.png";
+
 function Jobapps() {
+  const [jobApps, settJobApps] = useState([]);
+  const [query, setQuery] = useState(`/applications/getAll`);
+
+  useEffect(() => {
+    loadJobApps();
+  }, [query]);
+
+  const loadJobApps = async () => {
+    let token = localStorage.getItem("token");
+    let auth = "JWT " + token;
+    console.log(auth);
+    try {
+      const response = await fetch(query, {
+        method: "GET",
+        headers: {
+          Authorization: auth,
+        },
+      });
+      const data = await response.json();
+      console.log(data.data);
+      settJobApps(data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div className="jobApps">
       <div className="header">
@@ -26,231 +52,25 @@ function Jobapps() {
           <th>date of offer</th>
           <th>deadline to accept</th>
         </tr>
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status accepted">accpeted</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status applied">applied</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status declined">declined</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>{" "}
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>{" "}
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>{" "}
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>{" "}
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>{" "}
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>{" "}
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>{" "}
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>{" "}
-        <tr>
-          <td>google</td>
-          <td>software developer</td>
-          <td>job field</td>
-          <td>
-            <div className="status interview">interview</div>
-          </td>
-          <td>10/10/2020</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          <td>
-            <img src={bin} alt="Delete" className="deleteJob" />
-          </td>
-        </tr>
+        {jobApps.map((jobApp) => {
+          return (
+            <tr>
+              <td>{jobApp.company}</td>
+              <td>{jobApp.jobTitle}</td>
+              <td>job field</td>
+              <td>
+                <div className={"status " + jobApp.status}>{jobApp.status}</div>
+              </td>
+              <td>10/10/2020</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>
+                <img src={bin} alt="Delete" className="deleteJob" />
+              </td>
+            </tr>
+          );
+        })}
       </table>
     </div>
   );
