@@ -24,8 +24,9 @@ const JobAppsData = JSON.parse(
 const importData = async () => {
   try {
     // Create user data
-    // NOTE: This is customized to only take in one user from User.json
-    UsersData[0].hashPassword = bcrypt.hashSync(UsersData[0].password, 10);
+    UsersData.forEach((user) => {
+      user.hashPassword = bcrypt.hashSync(user.password, 10);
+    });
     await User.create(UsersData);
     // Create job apps
     await App.create(JobAppsData);

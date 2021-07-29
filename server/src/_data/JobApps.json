@@ -1,301 +1,608 @@
 [
   {
-    "company": "Intuit",
-
+    "company": "ON Semiconductor",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-12"
   },
 
   {
-    "company": "Intuit",
-
+    "company": "ON Semiconductor",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer Intern",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "Intuit",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Systems Designer",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "Intuit",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Robotics Specialist",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-12"
   },
 
   {
     "company": "Total System Services (TSYS)",
-
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-05-02"
   },
 
   {
     "company": "Total System Services (TSYS)",
-
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer Intern",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-05-02"
   },
 
   {
     "company": "CommScope",
-
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "Tieto",
-
+    "company": "CommScope",
     "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Software Engineer",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "Nokia",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Software Engineer",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "Nokia",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer Intern",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-05-02"
   },
 
   {
-    "company": "Accenture",
-
+    "company": "CommScope",
     "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Software Engineer",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "Accenture",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Software Engineer Intern",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "Accenture",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Systems Designer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-05-02"
   },
 
   {
-    "company": "Accenture",
-
+    "company": "CommScope",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Robotics Specialist",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "ManTech International Corporation",
-
+    "company": "CommScope",
     "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Software Engineer",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "ManTech International Corporation",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Software Engineer Intern",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "ManTech International Corporation",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Systems Designer",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "ManTech International Corporation",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
-    "jobTitle": "Robotics Specialist",
-
-    "status": "accepted"
-  },
-
-  {
-    "company": "ManTech International Corporation",
-
-    "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Data Scientist",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-12"
   },
 
   {
-    "company": "Symantec Corporation",
-
+    "company": "PEGATRON Corporation",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "Symantec Corporation",
-
+    "company": "PEGATRON Corporation",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer Intern",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "Symantec Corporation",
-
+    "company": "PEGATRON Corporation",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Systems Designer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "Intel",
-
+    "company": "Fujikura Ltd.",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-05-02"
   },
 
   {
-    "company": "Intel",
-
+    "company": "Fujikura Ltd.",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer Intern",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "Intel",
-
+    "company": "Fujikura Ltd.",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Systems Designer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "Intel",
-
+    "company": "Fujikura Ltd.",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Robotics Specialist",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-12"
   },
 
   {
-    "company": "Intel",
-
+    "company": "Fujikura Ltd.",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Data Scientist",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-12"
   },
 
   {
-    "company": "Unisys",
-
+    "company": "Akamai Technologies",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "Unisys",
-
+    "company": "Akamai Technologies",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Software Engineer Intern",
-
-    "status": "accepted"
+    "status": "applied",
+    "date_applied": "2021-04-27"
   },
 
   {
-    "company": "Unisys",
-
+    "company": "Akamai Technologies",
     "userId": "6101de3faf1974197ec25ef0",
-
     "jobTitle": "Systems Designer",
+    "status": "applied",
+    "date_applied": "2021-05-02"
+  },
 
-    "status": "accepted"
+  {
+    "company": "Akamai Technologies",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Robotics Specialist",
+    "status": "applied",
+    "date_applied": "2021-05-02"
+  },
+
+  {
+    "company": "Qualcomm",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-04-12"
+  },
+
+  {
+    "company": "Mastercard",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-04-12"
+  },
+
+  {
+    "company": "Mastercard",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-04-12"
+  },
+
+  {
+    "company": "Siliconware Precision Industries Ltd. (SPIL)",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-04-27"
+  },
+
+  {
+    "company": "Siliconware Precision Industries Ltd. (SPIL)",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-02"
+  },
+
+  {
+    "company": "Siliconware Precision Industries Ltd. (SPIL)",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Systems Designer",
+    "status": "applied",
+    "date_applied": "2021-04-12"
+  },
+
+  {
+    "company": "Seiko Epson Corporation",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-02"
+  },
+
+  {
+    "company": "Seiko Epson Corporation",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-04-27"
+  },
+
+  {
+    "company": "Seiko Epson Corporation",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Systems Designer",
+    "status": "applied",
+    "date_applied": "2021-04-12"
+  },
+
+  {
+    "company": "Seiko Epson Corporation",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Robotics Specialist",
+    "status": "applied",
+    "date_applied": "2021-04-12"
+  },
+
+  {
+    "company": "ASM Pacific Technology ",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-02"
+  },
+
+  {
+    "company": "ASM Pacific Technology ",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-02"
+  },
+
+  {
+    "company": "ASM Pacific Technology ",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Systems Designer",
+    "status": "applied",
+    "date_applied": "2021-04-12"
+  },
+
+  {
+    "company": "ASM Pacific Technology ",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Robotics Specialist",
+    "status": "applied",
+    "date_applied": "2021-05-02"
+  },
+
+  {
+    "company": "ASM Pacific Technology ",
+    "userId": "6101de3faf1974197ec25ef0",
+    "jobTitle": "Data Scientist",
+    "status": "applied",
+    "date_applied": "2021-05-02"
+  },
+  {
+    "company": "Advanced Micro Devices (AMD)",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Advanced Micro Devices (AMD)",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Qualcomm",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Qualcomm",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Qualcomm",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Cognizant",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Cognizant",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Cognizant",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Motorola Solutions",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Motorola Solutions",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Motorola Solutions",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Motorola Solutions",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Full Stack Developer",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Capgemini",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Capgemini",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Capgemini",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Analog Devices",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Analog Devices",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Analog Devices",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Analog Devices",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Full Stack Developer",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Oracle",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Oracle",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Oracle",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "CGI",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "CGI",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "CGI",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "CGI",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Full Stack Developer",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "CGI",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Data Scientist",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "LITE-ON Technology",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Salesforce",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Salesforce",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Salesforce",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Salesforce",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Full Stack Developer",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Salesforce",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Data Scientist",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Accenture",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-06-02"
+  },
+
+  {
+    "company": "Accenture",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Accenture",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Tokyo Electron",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Tokyo Electron",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Software Engineer Intern",
+    "status": "applied",
+    "date_applied": "2021-05-30"
+  },
+
+  {
+    "company": "Tokyo Electron",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Machine Learning Intern",
+    "status": "applied",
+    "date_applied": "2021-05-23"
+  },
+
+  {
+    "company": "Tokyo Electron",
+    "userId": "6101de3faf1974197ec25ef4",
+    "jobTitle": "Full Stack Developer",
+    "status": "applied",
+    "date_applied": "2021-06-02"
   }
 ]
