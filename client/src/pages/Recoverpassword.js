@@ -50,6 +50,10 @@ function Recoverpassword() {
               <button className="button" onClick={emailHandler}>
                 Send Email
               </button>
+              <br></br>
+              <b>
+                  <Link to="/login">Back to Login</Link>
+              </b>
             </form>
           </div>
         </div>
