@@ -42,6 +42,7 @@ function Resources() {
           />
         </a>
       </div>
+      <div style={{ marginTop: 5 + "em" }}></div>
       <h1 class="heading__title">
         Learn and develop new skills by building projects.
       </h1>
