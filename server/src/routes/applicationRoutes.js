@@ -54,7 +54,7 @@ const routes = (app) => {
     .delete(loginRequired, deleteApp);
 
   app.route("/applications/getAll").get(loginRequired, getAllApps);
-  app.route("/filter/status").get(loginRequired, filterByStatus);
+  app.route("/filter/status").post(loginRequired, filterByStatus);
   app.route("/filter/jobTitle").get(loginRequired, filterByJobTitle);
   app.route("/filter/company").get(loginRequired, filterByCompany);
 
@@ -68,7 +68,6 @@ const routes = (app) => {
   app.route("/data/heardback/company").get(loginRequired, heardBackCompany);
 
   app.route("/search").get(loginRequired, search);
-
 };
 
 export default routes;
