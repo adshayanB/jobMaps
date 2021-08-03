@@ -7,6 +7,7 @@ import Landingpage from "./pages/Landingpage";
 import Features from "./components/Features";
 import About from "./components/About";
 import Home from "./pages/Home";
+import Resourcepage from "./pages/Resourcepage";
 
 import aboutimage from "./images/about.gif";
 
@@ -36,6 +37,9 @@ const App = () => {
         </Route>
         <Route path="/home" exact>
           <Home />
+        </Route>
+        <Route path="/resources" exact>
+          <Resourcepage />
         </Route>
       </BrowserRouter>
     </div>
