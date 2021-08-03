@@ -1,32 +1,7 @@
 import React, { useEffect, useState } from "react";
 import bin from "../images/bin.png";
 
-function Jobapps() {
-  const [jobApps, settJobApps] = useState([]);
-  const [query, setQuery] = useState(`/applications/getAll`);
-
-  useEffect(() => {
-    loadJobApps();
-  }, [query]);
-
-  const loadJobApps = async () => {
-    let token = localStorage.getItem("token");
-    let auth = "JWT " + token;
-    console.log(auth);
-    try {
-      const response = await fetch(query, {
-        method: "GET",
-        headers: {
-          Authorization: auth,
-        },
-      });
-      const data = await response.json();
-      console.log(data.data);
-      settJobApps(data.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+function Jobapps({ jobApps }) {
   return (
     <div className="jobApps">
       <div className="header">
