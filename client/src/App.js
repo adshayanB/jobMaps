@@ -6,8 +6,9 @@ import Resetpassword from "./pages/ResetPassword";
 import Landingpage from "./pages/Landingpage";
 import Features from "./components/Features";
 import About from "./components/About";
-import Home from "./pages/Home";
+import Applications from "./pages/Applications";
 import Resourcepage from "./pages/Resourcepage";
+import Dashboardpage from "./pages/Dashboardpage";
 
 import aboutimage from "./images/about.gif";
 
@@ -35,11 +36,14 @@ const App = () => {
         <Route path="/reset-password/:token" exact>
           <Resetpassword />
         </Route>
-        <Route path="/home" exact>
-          <Home />
+        <Route path="/applications" exact>
+          <Applications />
         </Route>
         <Route path="/resources" exact>
           <Resourcepage />
+        </Route>
+        <Route path="/dashboard" exact>
+          <Dashboardpage />
         </Route>
       </BrowserRouter>
     </div>

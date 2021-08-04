@@ -3,7 +3,7 @@ import Homenav from "../components/Homenav";
 import Filters from "../components/Filters";
 import Jobapps from "../components/Jobapps";
 
-function Home() {
+function Applications() {
   const [jobApps, setJobApps] = useState([]);
   const [query, setQuery] = useState(`/applications/getAll`);
 
@@ -45,4 +45,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Applications;

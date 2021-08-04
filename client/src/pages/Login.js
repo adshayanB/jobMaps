@@ -66,7 +66,7 @@ function Login() {
   return (
     <>
       <div className="register">
-        {isLoggedIn ? <Redirect to="/home" /> : ""}
+        {isLoggedIn ? <Redirect to="/dashboard" /> : ""}
 
         <div className="registerModal">
           <img src={bgImg} alt="Side Image" className="bgImg" />
