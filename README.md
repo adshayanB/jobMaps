@@ -24,7 +24,7 @@
 #### :open_file_folder: To view full Product Requirements Document, [click here.](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 ---
 
-## :bulb: What is ProjectAlpha?
+## :bulb: What is JobMaps?
 Create an account to optimize your job searching process!
 <img src="client/src/images/signup.gif" alt="banner" width=fit-content/>
 <br>
