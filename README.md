@@ -1,11 +1,12 @@
 <!-- # :briefcase::pencil: Job Tracker  -->
-<img src="client/src/images/jobTrackerBanner.png" alt="banner" width=fit-content/>
+<img src="client/src/images/jobMapsBanner.png" alt="banner" width=fit-content/>
 
-### :round_pushpin: Check it out at (deployed link here)
+### :round_pushpin: Live site coming soon!
 ---
 #### :goal_net: Goal
 
 **Enable users to track the status of their job applications and prepare for interviews effectively.**
+<img src="client/src/images/landing.gif" alt="banner" width=fit-content/>
 
 ---
 #### :handshake: **Stakeholders**
@@ -24,6 +25,10 @@
 ---
 
 ## :bulb: What is ProjectAlpha?
-(screenshot of 2-3 pages of site with short description)
+Create an account to optimize your job searching process!
+<img src="client/src/images/signup.gif" alt="banner" width=fit-content/>
+<br>
+See curated resources to help you develop your skills.
+<img src="client/src/images/resources.gif" alt="banner" width=fit-content/>
 
 
