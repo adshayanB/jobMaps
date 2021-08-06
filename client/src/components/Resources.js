@@ -12,7 +12,6 @@ import "../styles/_resources.scss";
 function Resources() {
   return (
     <div id="features">
-      <div style={{ marginBottom: 30 + "em" }}></div>
       <h1 class="top__title">Resources</h1>
       <br></br>
       <h1 class="heading__title">
