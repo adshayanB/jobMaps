@@ -20,21 +20,21 @@ function Resources() {
       </h1>
       <br></br>
       <div className="a-container">
-        <a href="https://leetcode.com/">
+        <a href="https://leetcode.com/" target="_blank">
           <ResourceBox
             image={resourceimage1}
             title="Leetcode"
             text="Practice coding commonly asked questions during technical interviews."
           />
         </a>
-        <a href="https://codewars.com/">
+        <a href="https://codewars.com/" target="_blank">
           <ResourceBox
             image={resourceimage2}
             title="Codewars"
             text="Answer coding questions regarding syntax, logic, and more."
           />
         </a>
-        <a href="https://learnxinyminutes.com/">
+        <a href="https://learnxinyminutes.com/" target="_blank">
           <ResourceBox
             image={resourceimage3}
             title="Learn X in Y Minutes"
@@ -47,21 +47,21 @@ function Resources() {
         Learn and develop new skills by building projects.
       </h1>
       <div className="a-container">
-        <a href="https://codelabs.developers.google.com/">
+        <a href="https://codelabs.developers.google.com/" target="_blank">
           <ResourceBox
             image={resourceimage4}
             title="Codelabs"
             text="From machine learning to virtual reality, Google offers projects and tutorials for everyone."
           />
         </a>
-        <a href="https://mlh.io/">
+        <a href="https://mlh.io/" target="_blank">
           <ResourceBox
             image={resourceimage5}
             title="Major League Hacking"
             text="Attend hackathons where people collaborate to build projects and gain new skills."
           />
         </a>
-        <a href="https://devpost.com/">
+        <a href="https://devpost.com/" target="_blank">
           <ResourceBox
             image={resourceimage6}
             title="Devpost"
