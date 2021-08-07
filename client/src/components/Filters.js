@@ -10,7 +10,7 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
   const statusInterview = useRef();
 
   // States
-  const [filteredData, setFilteredData] = useState(false);
+  // const [filteredData, setFilteredData] = useState(false);
   const filterHandler = async () => {
     let token = localStorage.getItem("token");
     let auth = "JWT " + token;
@@ -23,6 +23,7 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
 
     // if len 0 for all filters, call getall again
     if (statusFilters.length) {
+      let results = [];
       for (const status of statusFilters) {
         try {
           const response = await fetch("/filter/status", {
@@ -37,20 +38,37 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
           });
           const data = await response.json();
           if (data.success) {
+            results.push(...data.data);
+            console.log(results);
             // if (!filteredData) {
-            //   setFilteredData(true);
+            // setFilteredData(true,,,,,,,,,,);
             //   console.log(1);
-            //   setJobApps(...jobApps, data.data);
+            //   let results = data.data;
+            //   setJobApps(results);
             // } else {
-            //   console.log(2);
-            //   console.log(...jobApps, data.data[0]);
-            //   setJobApps(...jobApps, data.data[0]);
+            //   let results = data.data;
+            //   results.push(...jobApps);
+            //   console.log(results);
+            //   setJobApps(results);
             // }
-            setJobApps(data.data);
           }
         } catch (err) {
           console.log(err);
         }
+      }
+      setJobApps(results);
+    } else {
+      try {
+        const response = await fetch("/applications/getAll", {
+          method: "GET",
+          headers: {
+            Authorization: auth,
+          },
+        });
+        const data = await response.json();
+        setJobApps(data.data);
+      } catch (err) {
+        console.log(err);
       }
     }
 

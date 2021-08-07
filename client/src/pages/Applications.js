@@ -23,7 +23,6 @@ function Applications() {
         },
       });
       const data = await response.json();
-      console.log(data);
       setJobApps(data.data);
     } catch (err) {
       console.log(err);
