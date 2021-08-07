@@ -21,7 +21,7 @@
 
 ---
 
-#### :open_file_folder: To view full Product Requirements Document, [click here.](https://github.com/adshayanB/jobMaps/files/6949475/PRD.1.pdf)
+#### :open_file_folder: To view full Product Requirements Document, [click here.](https://saymaakhan.github.io/PRD.pdf)
 
 ---
 
