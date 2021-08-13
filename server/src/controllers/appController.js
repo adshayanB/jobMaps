@@ -289,7 +289,7 @@ export const filterByCompany = async (req, res) => {
       }
     }
   );
-  return res.json(appValues);
+  return res.json({ success: true, data: appValues });
 };
 
 export const sort = async (req, res) => {
