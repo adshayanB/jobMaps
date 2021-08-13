@@ -21,7 +21,8 @@
 
 ---
 
-#### :open_file_folder: To view full Product Requirements Document, [click here.](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+#### :open_file_folder: To view full Product Requirements Document, [click here.](https://saymaakhan.github.io/PRD.pdf)
+
 ---
 
 ## :bulb: What is JobMaps?
