@@ -9,22 +9,22 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
   const statusDeclined = useRef();
   const statusInterview = useRef();
   const jobTitle = useRef();
+  const companyName = useRef();
 
-  // States
-  // const [filteredData, setFilteredData] = useState(false);
   const filterHandler = async () => {
     let token = localStorage.getItem("token");
     let auth = "JWT " + token;
     let statusFilters = [];
+
     if (statusApplied.current.checked) statusFilters.push("applied");
     if (statusAccepted.current.checked) statusFilters.push("accepted");
     if (statusRejected.current.checked) statusFilters.push("rejected");
     if (statusDeclined.current.checked) statusFilters.push("declind");
     if (statusInterview.current.checked) statusFilters.push("interview");
 
-    // if(jobTitle.c)
     let results = [];
-    // if len 0 for all filters, call getall again
+
+    // Filter by status
     if (statusFilters.length) {
       for (const status of statusFilters) {
         try {
@@ -47,8 +47,9 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
           console.log(err);
         }
       }
-      // setJobApps(results);
     }
+
+    // Filter by job title
     if (jobTitle.current.value.length) {
       try {
         const response = await fetch("/filter/jobTitle", {
@@ -70,6 +71,31 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
         console.log(err);
       }
     }
+
+    // Filter by company
+    if (companyName.current.value.length) {
+      try {
+        const response = await fetch("/filter/company", {
+          method: "POST",
+          headers: {
+            Authorization: auth,
+            "Content-type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({
+            company: companyName.current.value,
+          }),
+        });
+        const data = await response.json();
+        if (data.success) {
+          results.push(...data.data);
+          console.log(results);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    // if len 0 for all filters, call getall again
     if (results.length == 0) {
       try {
         const response = await fetch("/applications/getAll", {
@@ -86,21 +112,6 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
       }
     }
     setJobApps(results);
-    // if (statusApplied.current.checked) {
-    // }
-    // if (query == getall) {
-    //   // reset jobapps to empty
-
-    //   for (item in statuschecked) {
-    //     //  send req to req.body.status
-    //     //  append results to jobapps
-    //   }
-    // } else {
-    //   for (item in statuschecked) {
-    //     //  send req to req.body.status
-    //     //  append results to jobapps
-    //   }
-    // }
   };
   return (
     <div className="filters" onclick={filterHandler}>
@@ -162,7 +173,12 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
 
         <div className="filter-item">
           <div className="searchInput">
-            <input type="text" name="fname" required />
+            <input
+              type="text"
+              ref={companyName}
+              onChange={filterHandler}
+              required
+            />
             <label className="label-name">
               <span className="content-name">Company</span>
             </label>
@@ -172,7 +188,6 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
           <div className="searchInput">
             <input
               type="text"
-              name="fname"
               ref={jobTitle}
               onChange={filterHandler}
               required

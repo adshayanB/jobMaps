@@ -56,7 +56,7 @@ const routes = (app) => {
   app.route("/applications/getAll").get(loginRequired, getAllApps);
   app.route("/filter/status").post(loginRequired, filterByStatus);
   app.route("/filter/jobTitle").post(loginRequired, filterByJobTitle);
-  app.route("/filter/company").get(loginRequired, filterByCompany);
+  app.route("/filter/company").post(loginRequired, filterByCompany);
 
   app.route("/sort/field").get(loginRequired, sort);
   app.route("/sort/date").get(loginRequired, sortByDate);
