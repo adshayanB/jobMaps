@@ -248,11 +248,11 @@ export const updateApp = (req, res) => {
 };
 
 export const deleteApp = (req, res) => {
-  App.remove({ _id: req.body.ID }, (err) => {
+  App.remove({ _id: req.body.appId }, (err) => {
     if (err) {
       res.send(err);
     }
-    return res.json({ message: "Deleted App" });
+    return res.json({ success: true, message: "Deleted App" });
   });
 };
 
