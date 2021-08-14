@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from "react";
 import bin from "../images/bin.png";
 
-function Jobapps({ jobApps }) {
+function Jobapps({
+  jobApps,
+  isDeleteRequested,
+  setIsDeleteRequested,
+  appToDelete,
+  setAppToDelete,
+}) {
+  //  States
+  function deleteSetting(id) {
+    setIsDeleteRequested(!isDeleteRequested);
+    if (isDeleteRequested) {
+      console.log("delete");
+    } else {
+      console.log("no delete");
+      setAppToDelete(id);
+    }
+  }
   return (
     <div className="jobApps">
       <div className="header">
@@ -39,7 +55,12 @@ function Jobapps({ jobApps }) {
               <td>-</td>
               <td>-</td>
               <td>
-                <img src={bin} alt="Delete" className="deleteJob" />
+                <img
+                  src={bin}
+                  alt="Delete"
+                  onClick={() => deleteSetting(jobApp._id)}
+                  className="deleteJob"
+                />
               </td>
             </tr>
           );
