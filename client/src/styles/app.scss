@@ -368,22 +368,22 @@ nav .menu-btn,
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #e84e4f;
-    width: 50rem;
-    height: 20rem;
-    border-radius: 1rem;
+    width: 30rem;
+    height: 10rem;
+    border-radius: 0.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
     flex-direction: column;
-    font-size: 1.25rem;
+    font-size: 1rem;
     .buttons {
       display: flex;
       flex-direction: row;
       .button {
         padding: 0.25rem 0.5rem;
         border: solid white 1px;
-        border-radius: 5px;
+        border-radius: 3px;
         margin: 1rem;
         margin-bottom: 0;
         transition: 0.5s;
