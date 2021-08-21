@@ -400,6 +400,15 @@ nav .menu-btn,
   left: 42.5%;
 }
 
+.fc .fc-toolbar {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.fc-toolbar-title {
+  padding-right: 30px;
+}
+
 // Media Queries
 
 @media (max-width: 1190px) {
