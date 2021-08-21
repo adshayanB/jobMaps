@@ -9,6 +9,7 @@ import About from "./components/About";
 import Applications from "./pages/Applications";
 import Resourcepage from "./pages/Resourcepage";
 import Dashboardpage from "./pages/Dashboardpage";
+import Calendarpage from "./pages/Calendarpage";
 
 import aboutimage from "./images/about.gif";
 
@@ -36,14 +37,17 @@ const App = () => {
         <Route path="/reset-password/:token" exact>
           <Resetpassword />
         </Route>
+        <Route path="/dashboard" exact>
+          <Dashboardpage />
+        </Route>
         <Route path="/applications" exact>
           <Applications />
         </Route>
+        <Route path="/calendar" exact>
+          <Calendarpage />
+        </Route>
         <Route path="/resources" exact>
           <Resourcepage />
-        </Route>
-        <Route path="/dashboard" exact>
-          <Dashboardpage />
         </Route>
       </BrowserRouter>
     </div>
