@@ -46,17 +46,22 @@ const routes = (app) => {
     .get(loginRequired, userInfo)
     .put(loginRequired, updateUser)
     .delete(loginRequired, deleteUser);
+
+  app.route("/applications/getAll").get(loginRequired, getAllApps);
+
   app
     .route("/applications")
     .post(loginRequired, createApp)
-    .get(loginRequired, getApp)
-    .put(loginRequired, updateApp)
     .delete(loginRequired, deleteApp);
 
-  app.route("/applications/getAll").get(loginRequired, getAllApps);
+  app
+    .route("/applications/:id")
+    .get(loginRequired, getApp)
+    .put(loginRequired, updateApp);
+
   app.route("/filter/status").post(loginRequired, filterByStatus);
-  app.route("/filter/jobTitle").get(loginRequired, filterByJobTitle);
-  app.route("/filter/company").get(loginRequired, filterByCompany);
+  app.route("/filter/jobTitle").post(loginRequired, filterByJobTitle);
+  app.route("/filter/company").post(loginRequired, filterByCompany);
 
   app.route("/sort/field").get(loginRequired, sort);
   app.route("/sort/date").get(loginRequired, sortByDate);

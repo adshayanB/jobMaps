@@ -1,7 +1,73 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import bin from "../images/bin.png";
 
-function Jobapps({ jobApps }) {
+function Jobapps({
+  jobApps,
+  isDeleteRequested,
+  setIsDeleteRequested,
+  appToDelete,
+  setAppToDelete,
+}) {
+  //  States
+
+  // References
+  const editCompanyRef = useRef();
+
+  // login auth
+  let token = localStorage.getItem("token");
+  let auth = "JWT " + token;
+
+  function deleteSetting(id) {
+    setIsDeleteRequested(!isDeleteRequested);
+    if (!isDeleteRequested) {
+      setAppToDelete(id);
+    }
+  }
+
+  const editCompany = async (id, company) => {
+    let app;
+    try {
+      const response = await fetch(`/applications/${id}`, {
+        method: "GET",
+        headers: {
+          Authorization: auth,
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        app = data.data;
+        app.company = company;
+        console.log("data ", data.data);
+        try {
+          console.log(app);
+          console.log(app.company);
+          console.log(JSON.stringify(app));
+
+          const response = await fetch(`/applications/${id}`, {
+            method: "PUT",
+            headers: {
+              Authorization: auth,
+              "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(app),
+          });
+          const data_update = await response.json();
+          console.log(app);
+          if (data_update.success) {
+            console.log("success");
+            console.log(data_update.data);
+          } else {
+            console.log("cry");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div className="jobApps">
       <div className="header">
@@ -29,7 +95,17 @@ function Jobapps({ jobApps }) {
         {jobApps.map((jobApp) => {
           return (
             <tr>
-              <td>{jobApp.company}</td>
+              <td>
+                <div
+                  contentEditable
+                  ref={editCompanyRef}
+                  onInput={(e) => {
+                    editCompany(jobApp._id, e.target.textContent);
+                  }}
+                >
+                  {jobApp.company}
+                </div>
+              </td>
               <td>{jobApp.jobTitle}</td>
               <td>
                 <div className={"status " + jobApp.status}>{jobApp.status}</div>
@@ -39,7 +115,12 @@ function Jobapps({ jobApps }) {
               <td>-</td>
               <td>-</td>
               <td>
-                <img src={bin} alt="Delete" className="deleteJob" />
+                <img
+                  src={bin}
+                  alt="Delete"
+                  onClick={() => deleteSetting(jobApp._id)}
+                  className="deleteJob"
+                />
               </td>
             </tr>
           );

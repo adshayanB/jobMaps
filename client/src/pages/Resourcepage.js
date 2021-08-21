@@ -6,7 +6,7 @@ function Resourcepage() {
   return (
     <>
       <Homenav />
-      <div className="homeStyles">
+      <div className="resources-container">
         <Resources />
       </div>
     </>
