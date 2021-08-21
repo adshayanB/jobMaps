@@ -222,6 +222,12 @@
             height: 1.5rem;
             cursor: pointer;
           }
+          .editting {
+            background-color: rgba(237, 237, 237, 0.6);
+            width: 100%;
+            height: 100%;
+            outline: none;
+          }
         }
         th {
           font-weight: bold;

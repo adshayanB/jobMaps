@@ -2,6 +2,9 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import logo from "../images/logo.png";
 function Homenav() {
+  function logoutHandler() {
+    localStorage.setItem("token", "");
+  }
   return (
     <div>
       <div className="homeNav">
@@ -19,7 +22,9 @@ function Homenav() {
           <Link to="/resources">
             <li>Resources</li>
           </Link>
-          <li>Logout</li>
+          <Link to="/login" className="shorttest">
+            <li onClick={logoutHandler}>Logout</li>
+          </Link>
         </ul>
       </div>
     </div>
