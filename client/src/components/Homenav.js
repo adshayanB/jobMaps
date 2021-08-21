@@ -1,7 +1,9 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useLocation } from "react-router-dom";
 import logo from "../images/logo.png";
 function Homenav() {
+  const location = useLocation();
+
   function logoutHandler() {
     localStorage.setItem("token", "");
   }
@@ -11,16 +13,32 @@ function Homenav() {
         <img src={logo} alt="Logo" />
         <ul>
           <Link to="/dashboard">
-            <li>Dashboard</li>
+            <li
+              className={location.pathname === "/dashboard" ? "selected" : ""}
+            >
+              Dashboard
+            </li>
           </Link>
           <Link to="/applications">
-            <li className="selected">Job Applications</li>
+            <li
+              className={
+                location.pathname === "/applications" ? "selected" : ""
+              }
+            >
+              Job Applications
+            </li>
           </Link>
           <Link to="/calendar">
-            <li>Calendar</li>
+            <li className={location.pathname === "/calendar" ? "selected" : ""}>
+              Calendar
+            </li>
           </Link>
           <Link to="/resources">
-            <li>Resources</li>
+            <li
+              className={location.pathname === "/resources" ? "selected" : ""}
+            >
+              Resources
+            </li>
           </Link>
           <Link to="/login" className="shorttest">
             <li onClick={logoutHandler}>Logout</li>
