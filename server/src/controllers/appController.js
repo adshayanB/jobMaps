@@ -20,11 +20,11 @@ export const createApp = (req, res) => {
 };
 
 export const getApp = (req, res) => {
-  App.findById(req.body.ID, (err, app) => {
+  App.findById(req.params.id, (err, app) => {
     if (err) {
       res.send(err);
     }
-    return res.json(app);
+    return res.json({ success: true, data: app });
   });
 };
 
@@ -171,8 +171,7 @@ export const search = async (req, res) => {
     if (searchValues1.length > 0) {
       return res.json(searchValues1);
     } else {
-      //Is this a good message?
-      return res.json({ message: "Your search did not get any results" });
+      return res.json({ message: "No matching results" });
     }
   }
 };
@@ -225,7 +224,7 @@ export const heardBackCompany = async (req, res) => {
 
 export const updateApp = (req, res) => {
   App.findOneAndUpdate(
-    { _id: req.body.ID },
+    { _id: req.params.id },
     {
       company: req.body.company,
       jobTitle: req.body.jobTitle,
@@ -242,7 +241,7 @@ export const updateApp = (req, res) => {
         res.send(err);
       }
 
-      return res.json(app);
+      return res.json({ success: true, data: app });
     }
   );
 };
