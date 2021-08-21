@@ -12,6 +12,7 @@ function Jobapps({
 
   // References
   const editCompanyRef = useRef();
+  const editJobTitleRef = useRef();
 
   // login auth
   let token = localStorage.getItem("token");
@@ -55,10 +56,49 @@ function Jobapps({
           const data_update = await response.json();
           console.log(app);
           if (data_update.success) {
-            console.log("success");
             console.log(data_update.data);
-          } else {
-            console.log("cry");
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const editJobTitle = async (id, jobTitle) => {
+    let app;
+    try {
+      const response = await fetch(`/applications/${id}`, {
+        method: "GET",
+        headers: {
+          Authorization: auth,
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        app = data.data;
+        app.jobTitle = jobTitle;
+        console.log("data ", data.data);
+        try {
+          console.log(app);
+          console.log(app.company);
+          console.log(JSON.stringify(app));
+
+          const response = await fetch(`/applications/${id}`, {
+            method: "PUT",
+            headers: {
+              Authorization: auth,
+              "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(app),
+          });
+          const data_update = await response.json();
+          console.log(app);
+          if (data_update.success) {
+            console.log(data_update.data);
           }
         } catch (err) {
           console.log(err);
@@ -106,7 +146,17 @@ function Jobapps({
                   {jobApp.company}
                 </div>
               </td>
-              <td>{jobApp.jobTitle}</td>
+              <td>
+                <div
+                  contentEditable
+                  ref={editJobTitleRef}
+                  onInput={(e) => {
+                    editJobTitle(jobApp._id, e.target.textContent);
+                  }}
+                >
+                  {jobApp.jobTitle}
+                </div>
+              </td>
               <td>
                 <div className={"status " + jobApp.status}>{jobApp.status}</div>
               </td>
