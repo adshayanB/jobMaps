@@ -1,7 +1,7 @@
 import { Link, Redirect } from "react-router-dom";
 
 import React, { useState } from "react";
-import logo from "../images/logo.png";
+import logo from "../images/logo-white.png";
 
 function Landingpage() {
   const [nav, setnav] = useState(false);
@@ -50,8 +50,10 @@ function Landingpage() {
 
       <div className="name">
         <h1>Simplify your job searching process.</h1>
-        <br/>
-        <a href="/register" className="cv-btn">Get Started</a>
+        <br />
+        <a href="/register" className="cv-btn">
+          Get Started
+        </a>
       </div>
     </div>
   );
