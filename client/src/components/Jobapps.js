@@ -7,6 +7,8 @@ function Jobapps({
   setIsDeleteRequested,
   appToDelete,
   setAppToDelete,
+  setRerender,
+  rerender,
 }) {
   //  States
 
@@ -39,12 +41,7 @@ function Jobapps({
       if (data.success) {
         app = data.data;
         app.company = company;
-        console.log("data ", data.data);
         try {
-          console.log(app);
-          console.log(app.company);
-          console.log(JSON.stringify(app));
-
           const response = await fetch(`/applications/${id}`, {
             method: "PUT",
             headers: {
@@ -54,7 +51,6 @@ function Jobapps({
             body: JSON.stringify(app),
           });
           const data_update = await response.json();
-          console.log(app);
           if (data_update.success) {
             console.log(data_update.data);
           }
@@ -81,12 +77,7 @@ function Jobapps({
       if (data.success) {
         app = data.data;
         app.jobTitle = jobTitle;
-        console.log("data ", data.data);
         try {
-          console.log(app);
-          console.log(app.company);
-          console.log(JSON.stringify(app));
-
           const response = await fetch(`/applications/${id}`, {
             method: "PUT",
             headers: {
@@ -96,9 +87,47 @@ function Jobapps({
             body: JSON.stringify(app),
           });
           const data_update = await response.json();
-          console.log(app);
           if (data_update.success) {
             console.log(data_update.data);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const editStatus = async (id, status) => {
+    console.log(status, id);
+
+    let app;
+    try {
+      const response = await fetch(`/applications/${id}`, {
+        method: "GET",
+        headers: {
+          Authorization: auth,
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      const data = await response.json();
+      if (data.success) {
+        app = data.data;
+        app.status = status;
+        try {
+          const response = await fetch(`/applications/${id}`, {
+            method: "PUT",
+            headers: {
+              Authorization: auth,
+              "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(app),
+          });
+          const data_update = await response.json();
+          if (data_update.success) {
+            console.log(data_update.data);
+            setRerender(!rerender);
           }
         } catch (err) {
           console.log(err);
@@ -158,7 +187,55 @@ function Jobapps({
                 </div>
               </td>
               <td>
-                <div className={"status " + jobApp.status}>{jobApp.status}</div>
+                <div className={"status " + jobApp.status}>
+                  {jobApp.status}
+                  <div className="status-menu">
+                    <ul>
+                      <li
+                        onClick={() => {
+                          editStatus(jobApp._id, "applied");
+                        }}
+                      >
+                        applied
+                      </li>
+                      <li
+                        onClick={() => {
+                          editStatus(jobApp._id, "interview");
+                        }}
+                      >
+                        interview
+                      </li>
+                      <li
+                        onClick={() => {
+                          editStatus(jobApp._id, "accepted");
+                        }}
+                      >
+                        accepted
+                      </li>
+                      <li
+                        onClick={() => {
+                          editStatus(jobApp._id, "declined");
+                        }}
+                      >
+                        declined
+                      </li>
+                      <li
+                        onClick={() => {
+                          editStatus(jobApp._id, "ghosted");
+                        }}
+                      >
+                        ghosted
+                      </li>
+                      <li
+                        onClick={() => {
+                          editStatus(jobApp._id, "rejected");
+                        }}
+                      >
+                        rejected
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </td>
               <td>{jobApp.date_applied.substring(0, 10)}</td>
               <td>-</td>
