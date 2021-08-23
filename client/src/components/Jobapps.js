@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import bin from "../images/bin.png";
+import { Link } from "react-router-dom";
 
 function Jobapps({
   jobApps,
@@ -148,7 +149,9 @@ function Jobapps({
               <span className="content-name">Search</span>
             </label>
           </div>
-          <div className="green-btn">Add New Application</div>
+          <Link to="/add-apps">
+            <div className="green-btn">Add New Application</div>{" "}
+          </Link>
         </div>
       </div>
       <table>
