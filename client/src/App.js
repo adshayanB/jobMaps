@@ -10,6 +10,7 @@ import Applications from "./pages/Applications";
 import Resourcepage from "./pages/Resourcepage";
 import Dashboardpage from "./pages/Dashboardpage";
 import Calendarpage from "./pages/Calendarpage";
+import AddApps from "./pages/AddApps";
 
 import aboutimage from "./images/about.gif";
 
@@ -48,6 +49,9 @@ const App = () => {
         </Route>
         <Route path="/resources" exact>
           <Resourcepage />
+        </Route>
+        <Route path="/add-apps" exact>
+          <AddApps />
         </Route>
       </BrowserRouter>
     </div>
