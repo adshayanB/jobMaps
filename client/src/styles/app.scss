@@ -179,7 +179,7 @@ nav .menu-btn,
 #about {
   margin-top: 100px;
   width: 100%;
-  height: 120vh;
+  height: calc(100vh - 65px);
   background-color: #f3fdff;
   box-sizing: border-box;
   display: flex;
