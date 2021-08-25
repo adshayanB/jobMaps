@@ -152,6 +152,7 @@ nav .menu-btn,
   box-shadow: 5px 10px 30px rgba(86, 111, 111, 0.542);
   border-radius: 10px;
   color: #ffffff;
+  margin-top: 1rem;
 }
 .cv-btn:hover {
   background-color: #0099ff;
@@ -177,7 +178,6 @@ nav .menu-btn,
   margin-bottom: -80px;
 }
 #about {
-  margin-top: 100px;
   width: 100%;
   height: calc(100vh - 65px);
   background-color: #f3fdff;
@@ -232,7 +232,7 @@ nav .menu-btn,
 
 #features {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 65px);
   box-sizing: border-box;
   font-family: "DM Sans", sans-serif;
   display: flex;
@@ -420,6 +420,9 @@ nav .menu-btn,
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .about-image img {
     height: 400px;
@@ -461,10 +464,6 @@ nav .menu-btn,
   .about-image {
     display: none;
   }
-  .cv-btn {
-    margin-left: 27%;
-    margin-top: 20px;
-  }
   #about {
     justify-content: center;
     padding-top: 0px;
@@ -474,6 +473,9 @@ nav .menu-btn,
   }
   .about-text {
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .about-text h1 {
     font-size: 4rem;
