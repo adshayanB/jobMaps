@@ -1,7 +1,7 @@
 import { Link, Redirect } from "react-router-dom";
 
 import React, { useState } from "react";
-import logo from "../images/logo-white.png";
+import logo from "../images/logo-black.png";
 
 function Landingpage() {
   const [nav, setnav] = useState(false);
