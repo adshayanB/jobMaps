@@ -451,8 +451,6 @@ nav .menu-btn,
   .a-b-img img {
     object-fit: contain;
   }
-}
-@media (max-width: 970px) {
   .main {
     background-image: none !important;
   }
@@ -483,6 +481,8 @@ nav .menu-btn,
   .about-text p {
     width: 100%;
   }
+}
+@media (max-width: 970px) {
   #features {
     margin-bottom: 100px;
   }
