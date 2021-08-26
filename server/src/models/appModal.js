@@ -16,19 +16,19 @@ export const appSchema = new Schema({
     required: true,
   },
   date_offer: {
-    type: Date,
+    type: String,
     required: false,
   },
   date_interview: {
-    type: Date,
+    type: String,
     required: false,
   },
   date_accept: {
-    type: Date,
+    type: String,
     required: false,
   },
   date_applied: {
-    type: Date,
+    type: String,
     required: false,
   },
   userId: {
