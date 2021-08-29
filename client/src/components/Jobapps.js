@@ -81,23 +81,34 @@ function Jobapps({
       const data = await response.json();
       if (data.success) {
         app = data.data;
-        app.date_interview = date;
-        try {
-          const response = await fetch(`/applications/${id}`, {
-            method: "PUT",
-            headers: {
-              Authorization: auth,
-              "Content-type": "application/json; charset=UTF-8",
-            },
-            body: JSON.stringify(app),
-          });
-          const data_update = await response.json();
-          if (data_update.success) {
-            console.log(data_update.data);
-            setRerender(!rerender);
+        if (
+          app.status == "interview" ||
+          app.status == "accepted" ||
+          app.status == "declined" ||
+          app.status == "rejected"
+        ) {
+          app.date_interview = date;
+          try {
+            const response = await fetch(`/applications/${id}`, {
+              method: "PUT",
+              headers: {
+                Authorization: auth,
+                "Content-type": "application/json; charset=UTF-8",
+              },
+              body: JSON.stringify(app),
+            });
+            const data_update = await response.json();
+            if (data_update.success) {
+              console.log(data_update.data);
+              setRerender(!rerender);
+            }
+          } catch (err) {
+            console.log(err);
           }
-        } catch (err) {
-          console.log(err);
+        } else {
+          console.log(
+            "To update date of interview, status must be either interview / accepted / declined / rejected"
+          );
         }
       }
     } catch (err) {
@@ -120,22 +131,33 @@ function Jobapps({
       if (data.success) {
         app = data.data;
         app.date_offer = date;
-        try {
-          const response = await fetch(`/applications/${id}`, {
-            method: "PUT",
-            headers: {
-              Authorization: auth,
-              "Content-type": "application/json; charset=UTF-8",
-            },
-            body: JSON.stringify(app),
-          });
-          const data_update = await response.json();
-          if (data_update.success) {
-            setRerender(!rerender);
-            console.log(data_update.data);
+        if (
+          app.status == "interview" ||
+          app.status == "accepted" ||
+          app.status == "declined" ||
+          app.status == "rejected"
+        ) {
+          try {
+            const response = await fetch(`/applications/${id}`, {
+              method: "PUT",
+              headers: {
+                Authorization: auth,
+                "Content-type": "application/json; charset=UTF-8",
+              },
+              body: JSON.stringify(app),
+            });
+            const data_update = await response.json();
+            if (data_update.success) {
+              setRerender(!rerender);
+              console.log(data_update.data);
+            }
+          } catch (err) {
+            console.log(err);
           }
-        } catch (err) {
-          console.log(err);
+        } else {
+          console.log(
+            "To update date of interview, status must be either interview / accepted / declined / rejected"
+          );
         }
       }
     } catch (err) {
@@ -158,22 +180,28 @@ function Jobapps({
       if (data.success) {
         app = data.data;
         app.date_accept = date;
-        try {
-          const response = await fetch(`/applications/${id}`, {
-            method: "PUT",
-            headers: {
-              Authorization: auth,
-              "Content-type": "application/json; charset=UTF-8",
-            },
-            body: JSON.stringify(app),
-          });
-          const data_update = await response.json();
-          if (data_update.success) {
-            setRerender(!rerender);
-            console.log(data_update.data);
+        if (app.status == "accepted" || app.status == "declined") {
+          try {
+            const response = await fetch(`/applications/${id}`, {
+              method: "PUT",
+              headers: {
+                Authorization: auth,
+                "Content-type": "application/json; charset=UTF-8",
+              },
+              body: JSON.stringify(app),
+            });
+            const data_update = await response.json();
+            if (data_update.success) {
+              setRerender(!rerender);
+              console.log(data_update.data);
+            }
+          } catch (err) {
+            console.log(err);
           }
-        } catch (err) {
-          console.log(err);
+        } else {
+          console.log(
+            "To update date of interview, status must be either accepted / declined"
+          );
         }
       }
     } catch (err) {
@@ -400,7 +428,7 @@ function Jobapps({
                   onChange={(date) => {
                     appliedDateHandller(date, jobApp._id);
                   }}
-                  placeholderText={"props.placeholder"}
+                  placeholderText={"mm/dd/yyyy"}
                 />
               </td>
               <td>
@@ -414,14 +442,13 @@ function Jobapps({
                     onChange={(date) => {
                       interviewDateHandller(date, jobApp._id);
                     }}
-                    placeholderText={"props.placeholder"}
                   />
                 ) : (
                   <DatePicker
                     onChange={(date) => {
                       interviewDateHandller(date, jobApp._id);
                     }}
-                    placeholderText={"mm-dd-yyyy"}
+                    placeholderText={"mm/dd/yyyy"}
                   />
                 )}
               </td>
@@ -438,7 +465,7 @@ function Jobapps({
                     onChange={(date) => {
                       offerDateHandller(date, jobApp._id);
                     }}
-                    placeholderText={"mm-dd-yyyy"}
+                    placeholderText={"mm/dd/yyyy"}
                   />
                 )}
               </td>
@@ -455,7 +482,7 @@ function Jobapps({
                     onChange={(date) => {
                       acceptDateHandller(date, jobApp._id);
                     }}
-                    placeholderText={"mm-dd-yyyy"}
+                    placeholderText={"mm/dd/yyyy"}
                   />
                 )}
               </td>
