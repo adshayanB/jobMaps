@@ -1,5 +1,7 @@
 import React from "react";
 import Homenav from "../components/Homenav";
+import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
 
 function AddApps() {
   return (
@@ -23,7 +25,9 @@ function AddApps() {
                 </label>
               </div>{" "}
               <div className="status">
-                Status
+                <div className="add-apps-title">Status</div>
+
+                <div className="status-value">Applied</div>
                 <div className="status-menu">
                   <ul>
                     <li>applied</li>
@@ -37,29 +41,21 @@ function AddApps() {
               </div>
             </div>
             <div className="app-col">
-              <div className="searchInput">
-                <input type="text" name="date" required />
-                <label className="label-name">
-                  <span className="content-name">Date Applied</span>
-                </label>
+              <div className="date-section">
+                <div className="add-apps-title">Date Applied</div>
+                <DatePicker placeholderText={"mm/dd/yyyy"} />
               </div>
-              <div className="searchInput">
-                <input type="text" name="date" required />
-                <label className="label-name">
-                  <span className="content-name">Date of Interview</span>
-                </label>
+              <div className="date-section">
+                <div className="add-apps-title">Date of Interview</div>
+                <DatePicker placeholderText={"mm/dd/yyyy"} />
               </div>
-              <div className="searchInput">
-                <input type="text" name="date" required />
-                <label className="label-name">
-                  <span className="content-name">Date of Offer</span>
-                </label>
+              <div className="date-section">
+                <div className="add-apps-title">Date of Offer</div>
+                <DatePicker placeholderText={"mm/dd/yyyy"} />
               </div>
-              <div className="searchInput">
-                <input type="text" name="date" required />
-                <label className="label-name">
-                  <span className="content-name">Deadline to Accept</span>
-                </label>
+              <div className="date-section">
+                <div className="add-apps-title">Deadline to Accept</div>
+                <DatePicker placeholderText={"mm/dd/yyyy"} />
               </div>
             </div>
           </div>
