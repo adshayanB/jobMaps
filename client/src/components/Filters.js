@@ -15,7 +15,6 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
     let token = localStorage.getItem("token");
     let auth = "JWT " + token;
     let statusFilters = [];
-
     if (statusApplied.current.checked) statusFilters.push("applied");
     if (statusAccepted.current.checked) statusFilters.push("accepted");
     if (statusRejected.current.checked) statusFilters.push("rejected");
@@ -41,7 +40,6 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
           const data = await response.json();
           if (data.success) {
             results.push(...data.data);
-            console.log(results);
           }
         } catch (err) {
           console.log(err);
