@@ -81,34 +81,23 @@ function Jobapps({
       const data = await response.json();
       if (data.success) {
         app = data.data;
-        if (
-          app.status == "interview" ||
-          app.status == "accepted" ||
-          app.status == "declined" ||
-          app.status == "rejected"
-        ) {
-          app.date_interview = date;
-          try {
-            const response = await fetch(`/applications/${id}`, {
-              method: "PUT",
-              headers: {
-                Authorization: auth,
-                "Content-type": "application/json; charset=UTF-8",
-              },
-              body: JSON.stringify(app),
-            });
-            const data_update = await response.json();
-            if (data_update.success) {
-              console.log(data_update.data);
-              setRerender(!rerender);
-            }
-          } catch (err) {
-            console.log(err);
+        app.date_interview = date;
+        try {
+          const response = await fetch(`/applications/${id}`, {
+            method: "PUT",
+            headers: {
+              Authorization: auth,
+              "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(app),
+          });
+          const data_update = await response.json();
+          if (data_update.success) {
+            console.log(data_update.data);
+            setRerender(!rerender);
           }
-        } else {
-          console.log(
-            "To update date of interview, status must be either interview / accepted / declined / rejected"
-          );
+        } catch (err) {
+          console.log(err);
         }
       }
     } catch (err) {
@@ -131,33 +120,23 @@ function Jobapps({
       if (data.success) {
         app = data.data;
         app.date_offer = date;
-        if (
-          app.status == "interview" ||
-          app.status == "accepted" ||
-          app.status == "declined" ||
-          app.status == "rejected"
-        ) {
-          try {
-            const response = await fetch(`/applications/${id}`, {
-              method: "PUT",
-              headers: {
-                Authorization: auth,
-                "Content-type": "application/json; charset=UTF-8",
-              },
-              body: JSON.stringify(app),
-            });
-            const data_update = await response.json();
-            if (data_update.success) {
-              setRerender(!rerender);
-              console.log(data_update.data);
-            }
-          } catch (err) {
-            console.log(err);
+
+        try {
+          const response = await fetch(`/applications/${id}`, {
+            method: "PUT",
+            headers: {
+              Authorization: auth,
+              "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(app),
+          });
+          const data_update = await response.json();
+          if (data_update.success) {
+            setRerender(!rerender);
+            console.log(data_update.data);
           }
-        } else {
-          console.log(
-            "To update date of interview, status must be either interview / accepted / declined / rejected"
-          );
+        } catch (err) {
+          console.log(err);
         }
       }
     } catch (err) {
@@ -180,28 +159,22 @@ function Jobapps({
       if (data.success) {
         app = data.data;
         app.date_accept = date;
-        if (app.status == "accepted" || app.status == "declined") {
-          try {
-            const response = await fetch(`/applications/${id}`, {
-              method: "PUT",
-              headers: {
-                Authorization: auth,
-                "Content-type": "application/json; charset=UTF-8",
-              },
-              body: JSON.stringify(app),
-            });
-            const data_update = await response.json();
-            if (data_update.success) {
-              setRerender(!rerender);
-              console.log(data_update.data);
-            }
-          } catch (err) {
-            console.log(err);
+        try {
+          const response = await fetch(`/applications/${id}`, {
+            method: "PUT",
+            headers: {
+              Authorization: auth,
+              "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(app),
+          });
+          const data_update = await response.json();
+          if (data_update.success) {
+            setRerender(!rerender);
+            console.log(data_update.data);
           }
-        } else {
-          console.log(
-            "To update date of interview, status must be either accepted / declined"
-          );
+        } catch (err) {
+          console.log(err);
         }
       }
     } catch (err) {
