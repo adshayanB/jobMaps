@@ -40,10 +40,6 @@ function Filters({ query, jobApps, setJobApps, setQuery }) {
           const data = await response.json();
           if (data.success) {
             results.push(...data.data);
-            console.log(results);
-            console.log(results[0]);
-            console.log(results[1]);
-            console.log(results[0]._id);
           }
         } catch (err) {
           console.log(err);
