@@ -411,6 +411,11 @@ nav .menu-btn,
   padding-right: 30px;
 }
 
+.fc-event-time, .fc-event-title {
+  padding: 0 1px;
+  white-space: normal;
+  }
+
 // Media Queries
 
 @media (max-width: 1190px) {
