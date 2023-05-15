@@ -1,7 +1,7 @@
 <!-- # :briefcase::pencil: Job Tracker  -->
 <img src="client/src/images/jobMapsBanner.png" alt="banner" width=fit-content/>
 
-### :round_pushpin: Live site coming soon!
+### :round_pushpin: Info
 ---
 #### :goal_net: Goal
 
